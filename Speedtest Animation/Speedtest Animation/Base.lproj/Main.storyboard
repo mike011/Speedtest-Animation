@@ -28,18 +28,57 @@
         <!--Speed Test-->
         <scene sceneID="7UD-cn-u12">
             <objects>
-                <viewController id="wqN-K5-oey" userLabel="Speed Test" sceneMemberID="viewController">
+                <viewController id="wqN-K5-oey" userLabel="Speed Test" customClass="SpeedTestViewController" customModule="Speedtest_Animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Yn-Cu-cO3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-pR-SxC" userLabel="Start Glow">
+                                <rect key="frame" x="132" y="639" width="150" height="150"/>
+                                <color key="backgroundColor" name="StartGlowColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="B1L-Zq-eVS"/>
+                                    <constraint firstAttribute="width" secondItem="Sqd-pR-SxC" secondAttribute="height" id="vKF-tq-jwU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59e-JJ-QD6">
+                                <rect key="frame" x="147" y="653" width="120" height="120"/>
+                                <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="2nK-hE-Hel"/>
+                                    <constraint firstAttribute="width" secondItem="59e-JJ-QD6" secondAttribute="height" id="WFg-Bt-acz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SWQ-gF-OsA"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="59e-JJ-QD6" secondAttribute="bottom" constant="40" id="0uc-jC-Uhe"/>
+                            <constraint firstItem="59e-JJ-QD6" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="57f-H7-eET"/>
+                            <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="Sqd-pR-SxC" secondAttribute="top" constant="14" id="a1n-Z9-WnG"/>
+                            <constraint firstItem="Sqd-pR-SxC" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="gtR-AC-8rd"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="first-tab" selectedImage="first-tab-selected" id="4Vv-9w-MmK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbI-02-2vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="337"/>
+            <point key="canvasLocation" x="1002.8985507246377" y="336.83035714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wUc-19-nkL">
@@ -89,6 +128,15 @@
         <namedColor name="BackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="StartButtonBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="StartGlowColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
