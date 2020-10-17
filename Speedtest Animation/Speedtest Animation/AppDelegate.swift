@@ -13,7 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let appearance = UITabBarAppearance()
+        // makes the background transparent
+        appearance.backgroundEffect = nil
+        UITabBar.appearance().standardAppearance = appearance
         return true
     }
 
