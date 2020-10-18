@@ -22,6 +22,7 @@
 
 - How would the test and summary graph handle a really bad speed test?
 - For the speed test screen what would the result look like if the speeds were drastically different?
+- On the x axis of the summary view graph there are no units
 
 # Not Implemented
 

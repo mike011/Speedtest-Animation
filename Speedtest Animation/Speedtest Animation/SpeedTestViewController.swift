@@ -10,23 +10,11 @@ import UIKit
 class SpeedTestViewController: UIViewController {
 
     @IBOutlet weak var speedTestView: UIView!
-    private var displayDurationInSeconds = 3
+    private var displayDurationInSeconds = 1
 
     override func viewWillAppear(_ animated: Bool) {
-        setGradientBackground()
+        view.setGradientBackground()
         super.viewWillAppear(animated)
-    }
-
-    func setGradientBackground() {
-        let colorTop =  UIColor(named: "LightBackgroundColor")!.cgColor
-        let colorBottom = UIColor(named: "DarkBackgroundColor")!.cgColor
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = self.view.bounds
-
-        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 
     override func viewDidLoad() {
@@ -34,17 +22,39 @@ class SpeedTestViewController: UIViewController {
     }
 
     @IBAction func startButtonPressed(_fsender: Any) {
+        showDownloadAnimation()
+    }
 
+    fileprivate func showDownloadAnimation() {
         let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
         downloadAnimation.display()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(displayDurationInSeconds * 1000)) {
+        downloadAnimationCompleted(downloadAnimation)
+    }
+
+    fileprivate func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
+        DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             downloadAnimation.remove()
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
             uploadAnimation.display()
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(self.displayDurationInSeconds * 1000)) {
-                uploadAnimation.remove()
-            }
+            self.uploadAnimationCompleted(uploadAnimation)
         }
+    }
+
+    fileprivate func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
+        DispatchQueue.main.asyncAfter(deadline: getDuration()) {
+            uploadAnimation.remove()
+            self.showSummaryViewController()
+        }
+    }
+
+    private func getDuration() -> DispatchTime {
+        return .now() + .milliseconds(displayDurationInSeconds * 1000)
+    }
+
+    func showSummaryViewController() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let summaryViewController = storyBoard.instantiateViewController(withIdentifier: "summaryViewController")
+        present(summaryViewController, animated: true, completion: nil)
     }
 }
 

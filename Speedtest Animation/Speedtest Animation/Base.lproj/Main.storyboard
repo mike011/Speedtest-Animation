@@ -197,7 +197,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SWQ-gF-OsA"/>
-                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="59e-JJ-QD6" secondAttribute="bottom" constant="40" id="0uc-jC-Uhe"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="25y-3a-2TS"/>
@@ -216,6 +216,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="first-tab" selectedImage="first-tab-selected" id="4Vv-9w-MmK"/>
+                    <navigationItem key="navigationItem" id="yqm-2B-eWc"/>
                     <connections>
                         <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
                     </connections>
@@ -223,6 +224,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbI-02-2vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.8985507246377" y="336.83035714285711"/>
+        </scene>
+        <!--Summary View Controller-->
+        <scene sceneID="YMG-hp-dZ8">
+            <objects>
+                <viewController storyboardIdentifier="summaryViewController" id="DV0-ic-HTj" customClass="SummaryViewController" customModule="Speedtest_Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Drx-9b-ME0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4T9-LG-wrF" userLabel="Buttons View">
+                                <rect key="frame" x="97.5" y="771" width="219" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaZ-9F-vq1" userLabel="Back Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="45"/>
+                                        <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                        <state key="normal" image="backArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="DV0-ic-HTj" eventType="touchUpInside" id="BA5-Lm-KOr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8om-4w-oYO" userLabel="Share Button">
+                                        <rect key="frame" x="129" y="0.0" width="90" height="45"/>
+                                        <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="gqN-Gz-GBA"/>
+                                        </constraints>
+                                        <state key="normal" image="share"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8om-4w-oYO" firstAttribute="leading" secondItem="DaZ-9F-vq1" secondAttribute="trailing" constant="38" id="7EI-1E-pem"/>
+                                    <constraint firstAttribute="trailing" secondItem="8om-4w-oYO" secondAttribute="trailing" id="E3Z-VH-88C"/>
+                                    <constraint firstAttribute="bottom" secondItem="8om-4w-oYO" secondAttribute="bottom" id="GIh-1L-KMv"/>
+                                    <constraint firstItem="DaZ-9F-vq1" firstAttribute="leading" secondItem="4T9-LG-wrF" secondAttribute="leading" id="KdS-x7-yLN"/>
+                                    <constraint firstItem="8om-4w-oYO" firstAttribute="top" secondItem="4T9-LG-wrF" secondAttribute="top" id="TOh-eh-H0r"/>
+                                    <constraint firstAttribute="width" constant="219" id="UMk-zs-d3g"/>
+                                    <constraint firstAttribute="bottom" secondItem="8om-4w-oYO" secondAttribute="bottom" id="dqh-XX-dhb"/>
+                                    <constraint firstAttribute="bottom" secondItem="DaZ-9F-vq1" secondAttribute="bottom" id="fRM-Yo-uUn"/>
+                                    <constraint firstAttribute="height" constant="45" id="iGQ-Ez-bb8"/>
+                                    <constraint firstAttribute="trailing" secondItem="8om-4w-oYO" secondAttribute="trailing" id="mVv-Gv-tHf"/>
+                                    <constraint firstItem="DaZ-9F-vq1" firstAttribute="top" secondItem="4T9-LG-wrF" secondAttribute="top" id="r2d-Ho-a13"/>
+                                    <constraint firstItem="8om-4w-oYO" firstAttribute="top" secondItem="4T9-LG-wrF" secondAttribute="top" id="zhu-MD-Beq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qRM-87-wE3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4T9-LG-wrF" firstAttribute="centerX" secondItem="qRM-87-wE3" secondAttribute="centerX" id="Kcn-Iq-03H"/>
+                            <constraint firstItem="qRM-87-wE3" firstAttribute="bottom" secondItem="4T9-LG-wrF" secondAttribute="bottom" constant="46" id="Vh3-wX-SS4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYM-O5-NZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1755.072463768116" y="334.82142857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wUc-19-nkL">
@@ -264,17 +332,16 @@
     </scenes>
     <resources>
         <image name="arrow" width="13" height="12.5"/>
+        <image name="backArrow" width="26" height="18"/>
         <image name="first-tab" width="26.5" height="26.5"/>
         <image name="first-tab-selected" width="26.5" height="26.5"/>
         <image name="second-tab" width="26.5" height="26.5"/>
         <image name="second-tab-selected" width="26.5" height="26.5"/>
+        <image name="share" width="27" height="27"/>
         <image name="third-tab" width="26.5" height="26.5"/>
         <image name="third-tab-selected" width="26.5" height="26.5"/>
         <image name="wifi" width="56" height="58"/>
         <image name="world" width="28" height="28"/>
-        <namedColor name="BackgroundColor">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="LightBackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
