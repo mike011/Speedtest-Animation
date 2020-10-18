@@ -44,7 +44,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPEEDTEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HF-rE-Zwf">
-                                        <rect key="frame" x="33" y="6.5" width="97" height="22"/>
+                                        <rect key="frame" x="33" y="7" width="97" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="97" id="s8U-rD-3la"/>
                                         </constraints>
@@ -63,6 +63,75 @@
                                     <constraint firstItem="Pae-ew-ar4" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="top" id="vZ0-C7-o7e"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-3X-iW5" userLabel="Speed Test View">
+                                <rect key="frame" x="0.0" y="79" width="414" height="291"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-g3-ehh" userLabel="WIFI View">
+                                <rect key="frame" x="57" y="370" width="300" height="90"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-ed-4sh">
+                                        <rect key="frame" x="0.0" y="1" width="86" height="88"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="86" id="3Y7-L3-v1Z"/>
+                                            <constraint firstAttribute="height" constant="88" id="QDc-BT-C3F"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="China Telecom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-qD-mzm">
+                                        <rect key="frame" x="104" y="30" width="196" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ik9-xu-gTB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="centerY" secondItem="Amo-ed-4sh" secondAttribute="centerY" id="055-mm-svz"/>
+                                    <constraint firstAttribute="height" constant="90" id="TU6-Og-qL8"/>
+                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="leading" secondItem="8as-g3-ehh" secondAttribute="leading" id="WRe-lo-Ip1"/>
+                                    <constraint firstAttribute="width" constant="300" id="aW4-0E-FvC"/>
+                                    <constraint firstAttribute="trailing" secondItem="fe1-qD-mzm" secondAttribute="trailing" id="cEw-JA-srO"/>
+                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="centerY" secondItem="8as-g3-ehh" secondAttribute="centerY" id="p3L-gx-1a3"/>
+                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="leading" secondItem="Amo-ed-4sh" secondAttribute="trailing" constant="18" id="sLr-TR-37O"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-pR-SxC" userLabel="Start Glow">
+                                <rect key="frame" x="132" y="639" width="150" height="150"/>
+                                <color key="backgroundColor" name="StartGlowColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="B1L-Zq-eVS"/>
+                                    <constraint firstAttribute="width" secondItem="Sqd-pR-SxC" secondAttribute="height" id="vKF-tq-jwU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59e-JJ-QD6" userLabel="Start Button">
+                                <rect key="frame" x="147" y="653" width="120" height="120"/>
+                                <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="2nK-hE-Hel"/>
+                                    <constraint firstAttribute="width" secondItem="59e-JJ-QD6" secondAttribute="height" id="WFg-Bt-acz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="wqN-K5-oey" eventType="touchUpInside" id="EdC-Tk-zBA"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-dr-oaM" userLabel="Server View">
                                 <rect key="frame" x="57" y="483" width="300" height="90"/>
                                 <subviews>
@@ -126,85 +195,30 @@
                                     <constraint firstItem="HWY-lN-Zcr" firstAttribute="centerY" secondItem="CR5-dr-oaM" secondAttribute="centerY" id="xTW-pU-oUL"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-g3-ehh" userLabel="WIFI View">
-                                <rect key="frame" x="57" y="370" width="300" height="90"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-ed-4sh">
-                                        <rect key="frame" x="0.0" y="1" width="86" height="88"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="3Y7-L3-v1Z"/>
-                                            <constraint firstAttribute="height" constant="88" id="QDc-BT-C3F"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="China Telecom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-qD-mzm">
-                                        <rect key="frame" x="104" y="30" width="196" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ik9-xu-gTB"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="centerY" secondItem="Amo-ed-4sh" secondAttribute="centerY" id="055-mm-svz"/>
-                                    <constraint firstAttribute="height" constant="90" id="TU6-Og-qL8"/>
-                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="leading" secondItem="8as-g3-ehh" secondAttribute="leading" id="WRe-lo-Ip1"/>
-                                    <constraint firstAttribute="width" constant="300" id="aW4-0E-FvC"/>
-                                    <constraint firstAttribute="trailing" secondItem="fe1-qD-mzm" secondAttribute="trailing" id="cEw-JA-srO"/>
-                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="centerY" secondItem="8as-g3-ehh" secondAttribute="centerY" id="p3L-gx-1a3"/>
-                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="leading" secondItem="Amo-ed-4sh" secondAttribute="trailing" constant="18" id="sLr-TR-37O"/>
-                                </constraints>
-                            </view>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-pR-SxC" userLabel="Start Glow">
-                                <rect key="frame" x="132" y="639" width="150" height="150"/>
-                                <color key="backgroundColor" name="StartGlowColor"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="B1L-Zq-eVS"/>
-                                    <constraint firstAttribute="width" secondItem="Sqd-pR-SxC" secondAttribute="height" id="vKF-tq-jwU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="75"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59e-JJ-QD6" userLabel="Start Button">
-                                <rect key="frame" x="147" y="653" width="120" height="120"/>
-                                <color key="backgroundColor" name="StartButtonBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="2nK-hE-Hel"/>
-                                    <constraint firstAttribute="width" secondItem="59e-JJ-QD6" secondAttribute="height" id="WFg-Bt-acz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <state key="normal" title="START">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="60"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SWQ-gF-OsA"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="59e-JJ-QD6" secondAttribute="bottom" constant="40" id="0uc-jC-Uhe"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="25y-3a-2TS"/>
+                            <constraint firstItem="Cb6-3X-iW5" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" id="4CE-zE-rpE"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="57f-H7-eET"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="top" secondItem="8as-g3-ehh" secondAttribute="bottom" constant="23" id="6vO-81-D0v"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="Fkn-hB-WeZ"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="trailing" secondItem="Cb6-3X-iW5" secondAttribute="trailing" id="HDT-Nd-9HG"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" id="Q8u-wp-aw4"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="CR5-dr-oaM" secondAttribute="bottom" constant="80" id="QuS-6a-gJQ"/>
+                            <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="Cb6-3X-iW5" secondAttribute="bottom" id="WIq-W7-2mQ"/>
+                            <constraint firstItem="Cb6-3X-iW5" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="bottom" id="XTe-RB-8gp"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="Sqd-pR-SxC" secondAttribute="top" constant="14" id="a1n-Z9-WnG"/>
                             <constraint firstItem="Sqd-pR-SxC" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="gtR-AC-8rd"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="xE0-ri-2MU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="first-tab" selectedImage="first-tab-selected" id="4Vv-9w-MmK"/>
+                    <connections>
+                        <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbI-02-2vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
