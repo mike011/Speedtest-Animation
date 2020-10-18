@@ -14,6 +14,9 @@
 		4C39F492253B292400708FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C39F491253B292400708FD7 /* Assets.xcassets */; };
 		4C39F495253B292400708FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C39F493253B292400708FD7 /* LaunchScreen.storyboard */; };
 		4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */; };
+		4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B66253C952100E6631E /* DownloadAnimation.swift */; };
+		4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */; };
+		4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B6C253C979800E6631E /* UploadAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		4C39F494253B292400708FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C39F496253B292400708FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
+		4CE72B66253C952100E6631E /* DownloadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAnimation.swift; sourceTree = "<group>"; };
+		4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		4CE72B6C253C979800E6631E /* UploadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				4C39F493253B292400708FD7 /* LaunchScreen.storyboard */,
 				4C39F496253B292400708FD7 /* Info.plist */,
 				4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */,
+				4CE72B66253C952100E6631E /* DownloadAnimation.swift */,
+				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
+				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
 			);
 			path = "Speedtest Animation";
 			sourceTree = "<group>";
@@ -141,7 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */,
+				4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */,
 				4C39F48D253B292400708FD7 /* ViewController.swift in Sources */,
+				4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */,
+				4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */,
 				4C39F489253B292400708FD7 /* AppDelegate.swift in Sources */,
 				4C39F48B253B292400708FD7 /* SceneDelegate.swift in Sources */,
 			);

@@ -16,6 +16,7 @@
 - make tab bar icons bigger
 - different highlights for indicating good scores versus poor
 - adding a tail to the emitted values as they disappear
+- make a smoother transition between the animations
 
 # Concerns
 
@@ -28,3 +29,8 @@
 
 - The lack of a naming convention used in the assets catalog
 - Containing the upload animation to only the top part of the view.
+- clean up the upload animation to make it more look like the spec
+- clean up the upload animation code
+- add a start animation that shows both colors like the spec.
+- clean up warnings in xCode
+- clean up folder structure
