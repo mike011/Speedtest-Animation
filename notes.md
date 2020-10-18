@@ -7,6 +7,7 @@
 - How is the server picked?
 - How to fake the data
 - What is the correct test length?
+- Likeve only shows up on the result under telco company name
 
 # Future Improvements
 
