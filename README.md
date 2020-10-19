@@ -41,4 +41,4 @@ Well I went for a nice long walk and came up with some ideas on how to reverse t
 
 # Oct 19
 
-I skipped showing the overlays in favour of populating the second screen. I go the back and share buttons, the server and wifi and the upload and download views all correctly placed. I honestly have no idea how to do the graph. But I want to get everything layout first, then worry about how that's going to get drawn. So today I'm going to continue populating the summary view
+I skipped showing the overlays in favour of populating the second screen. I go the back and share buttons, the server and wifi and the upload and download views all correctly placed. I honestly have no idea how to do the graph. But I want to get everything layout first, then worry about how that's going to get drawn. So today I'm going to continue populating the summary view. I noticed last night what when the animation starts the wifi and server views are transitioned further down the screen and the download speed test view increases in size when the test starts. I'm not sure how much effort I'm going to put into duplicating this behaviour. I'm not a big fan of it.

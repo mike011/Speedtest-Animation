@@ -18,6 +18,10 @@
 - different highlights for indicating good scores versus poor
 - adding a tail to the emitted values as they disappear
 - make a smoother transition between the animations
+- slide the server and wifi view downs when the speed test starts
+- grow the speed test view when it starts
+- on speed test start have both upload and downloads showing, fade out the uploads and keep the downloads going.
+- before the speed test start have the initial screen shown which would match the animation
 
 # Concerns
 
@@ -28,7 +32,7 @@
 
 # Not Implemented
 
-- I like how the summary result screen takes up the whole view. I find it slightly simplifies the view and navigation away from it.
+- I like how the summary result screen takes up the whole screen. It covers the tabs. I find it slightly simplifies the view and navigation away from it.
 
 # To fix
 

@@ -5,12 +5,19 @@
 //  Created by Michael Charland on 2020-10-17.
 //
 
+import SpriteKit
 import UIKit
 
 class SpeedTestViewController: UIViewController {
 
     @IBOutlet weak var speedTestView: UIView!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startButtonSKView: SKView!
+    @IBOutlet weak var startButtonGlowView: UIImageView!
     private var displayDurationInSeconds = 1
+    private var hideStartButtonAnimationTimer: Timer?
+
+    private var scene: SKScene?
 
     override func viewWillAppear(_ animated: Bool) {
         view.setGradientBackground()
@@ -19,10 +26,54 @@ class SpeedTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let view = self.startButtonSKView {
+            if let scene = SKScene(fileNamed: "StartButton") {
+                view.presentScene(scene)
+                scene.backgroundColor = .clear
+                self.scene = scene
+            }
+        }
+    }
+
+    fileprivate func showStartButton() {
+        startButton.isHidden = false
     }
 
     @IBAction func startButtonPressed(_fsender: Any) {
         showDownloadAnimation()
+
+        hideStartButtonTitle()
+        startStartButtonAnimation()
+        hideStartButtonAnimation()
+    }
+
+    fileprivate func hideStartButtonTitle() {
+        startButton.isHidden = true
+    }
+
+    fileprivate func startStartButtonAnimation() {
+        let action = SKAction.animate(with: getTextures(), timePerFrame: 0.04)
+        let animation = SKSpriteNode(imageNamed: "1.png")
+        animation.run(action)
+        scene?.addChild(animation)
+    }
+
+    func getTextures() -> [SKTexture] {
+        var result = [SKTexture]()
+        for i in 1...7 {
+            result.append(SKTexture(imageNamed: "\(i).png"))
+        }
+        return result
+    }
+
+    fileprivate func hideStartButtonAnimation() {
+        hideStartButtonAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
+            self.startButtonSKView.alpha -= 0.1
+            if self.startButtonSKView.alpha <= 0 {
+                timer.invalidate()
+                self.startButtonGlowView.isHidden = true
+            }
+        }
     }
 
     fileprivate func showDownloadAnimation() {
@@ -54,7 +105,12 @@ class SpeedTestViewController: UIViewController {
     func showSummaryViewController() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let summaryViewController = storyBoard.instantiateViewController(withIdentifier: "summaryViewController")
-        present(summaryViewController, animated: true, completion: nil)
+        present(summaryViewController, animated: true, completion: reset)
+    }
+
+    func reset() {
+        startButtonSKView.alpha = 1
+        showStartButton()
     }
 }
 
