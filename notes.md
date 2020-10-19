@@ -24,8 +24,11 @@
 - How would the test and summary graph handle a really bad speed test?
 - For the speed test screen what would the result look like if the speeds were drastically different?
 - On the x axis of the summary view graph there are no units
+- On the summary screen what is the value to the right of Jitter and Loss. These seem like bugs as ping does not have a value.
 
 # Not Implemented
+
+- I like how the summary result screen takes up the whole view. I find it slightly simplifies the view and navigation away from it.
 
 # To fix
 
