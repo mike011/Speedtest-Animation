@@ -56,3 +56,5 @@ Well, that went pretty went pretty smooth. I really like how the server and wifi
 # Oct 20
 
 Uggh, first bug today. The console was spitting out a couple of "Unable to simultaneously satisfy constraints.". So I stashed my changes and re-ran, still saw the problem. So I created a new temp git branch and reset my last commit, tried again, failed again. And one more time and no error messages. I've now nailed it down to the vertical and horizontal constraints on the server image. Pheww, this turned out to be a couple of easy fixes. I just had to remove the constraints on the local view as it's now constrained on the whole view (to allow it to move)
+
+Got the jitter, etc showing, I ended up putting everything in one view and animating that to be shown instead of what I originally did was animation each unit by itself. One thing I know that will change is when real values are added in the sizing of a lot of the views will have to change. 

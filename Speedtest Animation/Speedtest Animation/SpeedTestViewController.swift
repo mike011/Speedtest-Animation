@@ -13,6 +13,7 @@ class SpeedTestViewController: UIViewController {
     // MARK: - Speed Test
     @IBOutlet weak var speedTestView: UIView!
     private var speedtestDurationInSeconds = 1
+    @IBOutlet weak var speedTestValuesView: UIView!
 
     // MARK: - Server
     @IBOutlet weak var serverTitle: UILabel!
@@ -22,7 +23,6 @@ class SpeedTestViewController: UIViewController {
     @IBOutlet weak var serverImageHorizontalConstraint: NSLayoutConstraint!
     private var serverImageVerticalDefault: CGFloat!
     private var serverImageHorizontalDefault: CGFloat!
-
 
     // MARK: - WIFI
     @IBOutlet weak var wifiTitle: UILabel!
@@ -80,6 +80,7 @@ class SpeedTestViewController: UIViewController {
         startStartButtonAnimation()
         hideStartButtonAnimation()
         showDotsImages()
+        showSpeedTestValues()
     }
 
     private func hideStartButtonTitle() {
@@ -108,6 +109,7 @@ class SpeedTestViewController: UIViewController {
             self.animateStartViews()
             self.animateDotsImages()
             self.animateSpeedResultViews()
+            self.animateSpeedTestValues()
             if self.startButtonSKView.alpha <= 0 {
                 timer.invalidate()
             }
@@ -119,11 +121,16 @@ class SpeedTestViewController: UIViewController {
         dotsImage.alpha = 0
     }
 
+    private func showSpeedTestValues() {
+        speedTestValuesView.isHidden = false
+        speedTestValuesView.alpha = 0
+    }
+
     private func animateServerViews() {
         serverTitle.alpha -= 0.1
         serverSubtitle.alpha -= 0.1
         serverButton.alpha -= 0.1
-        serverImageVerticalConstraint.constant -= 25
+        serverImageVerticalConstraint.constant -= 12.5
         serverImageHorizontalConstraint.constant += 10
     }
 
@@ -141,8 +148,12 @@ class SpeedTestViewController: UIViewController {
         dotsImage.alpha += 0.1
     }
 
-    fileprivate func animateSpeedResultViews() {
-        self.speedResultVerticalConstraint.constant -= 15
+    private func animateSpeedResultViews() {
+        speedResultVerticalConstraint.constant -= 15
+    }
+
+    private func animateSpeedTestValues() {
+        speedTestValuesView.alpha += 0.2
     }
 
     private func showDownloadAnimation() {
@@ -185,6 +196,7 @@ class SpeedTestViewController: UIViewController {
         resetServerViews()
         resetDotsImages()
         resetConstraints()
+        resetSpeedTestValues()
     }
 
     private func resetStartViews() {
@@ -214,6 +226,11 @@ class SpeedTestViewController: UIViewController {
         serverImageVerticalConstraint.constant = serverImageVerticalDefault
         serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
         speedResultVerticalConstraint.constant = speedResultVerticalDefault
+    }
+
+    private func resetSpeedTestValues() {
+        speedTestValuesView.isHidden = true
+        speedTestValuesView.alpha = 1
     }
 }
 

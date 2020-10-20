@@ -22,6 +22,8 @@
 - grow the speed test view when it starts
 - on speed test start have both upload and downloads showing, fade out the uploads and keep the downloads going.
 - before the speed test start have the initial screen shown which would match the animation
+- be able to handle different values for all the views.
+- Split the view controller into multiple view controllers to handle the different parts of the screen.
 
 # Concerns
 
@@ -41,5 +43,4 @@
 - clean up the upload animation to make it more look like the spec
 - clean up the upload animation code
 - add a start animation that shows both colors like the spec.
-- clean up warnings in xCode
 - clean up folder structure
