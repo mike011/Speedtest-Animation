@@ -262,11 +262,9 @@
                                     <constraint firstItem="v04-B3-AyX" firstAttribute="leading" secondItem="bLT-dX-l4V" secondAttribute="trailing" constant="4" id="1aZ-nn-3JV"/>
                                     <constraint firstItem="bLT-dX-l4V" firstAttribute="leading" secondItem="ofu-3o-nVO" secondAttribute="leading" id="BQS-oj-9WV"/>
                                     <constraint firstItem="bLT-dX-l4V" firstAttribute="top" secondItem="CR5-dr-oaM" secondAttribute="top" id="BmU-UK-TQz"/>
-                                    <constraint firstItem="HWY-lN-Zcr" firstAttribute="leading" secondItem="CR5-dr-oaM" secondAttribute="leading" id="C6z-Ga-hku"/>
                                     <constraint firstAttribute="trailing" secondItem="v04-B3-AyX" secondAttribute="trailing" id="Qhz-kj-468"/>
                                     <constraint firstItem="v04-B3-AyX" firstAttribute="centerY" secondItem="bLT-dX-l4V" secondAttribute="centerY" id="VnR-3e-sHz"/>
                                     <constraint firstItem="ofu-3o-nVO" firstAttribute="top" secondItem="bLT-dX-l4V" secondAttribute="bottom" constant="2" id="XHS-dq-WjZ"/>
-                                    <constraint firstItem="HWY-lN-Zcr" firstAttribute="top" secondItem="CR5-dr-oaM" secondAttribute="top" id="hyv-7z-xbD"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ofu-3o-nVO" secondAttribute="trailing" constant="20" symbolic="YES" id="idQ-Xd-Zvr"/>
                                     <constraint firstAttribute="height" constant="50" id="n2B-Bd-lsz"/>
                                     <constraint firstAttribute="width" constant="170" id="oEw-6O-y34"/>

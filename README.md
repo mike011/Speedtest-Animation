@@ -52,3 +52,7 @@ I'm really enjoying this project and trying to duplicate the behaviour of the sp
 Next up, I'm going to get the server and wifi views to transition down. This will be interesting because I've done transitions on vertical constraints in the past, but not on vertical and horizontal at the same time.
 
 Well, that went pretty went pretty smooth. I really like how the server and wifi come down. Next up is the make the upload, download, and current speed come down. Awesome, nice and simple just had to animate the one constraint. Tomorrow, I want to clean up the download and upload animations, get the jitter, etc showing, and populate them with some values.
+
+# Oct 20
+
+Uggh, first bug today. The console was spitting out a couple of "Unable to simultaneously satisfy constraints.". So I stashed my changes and re-ran, still saw the problem. So I created a new temp git branch and reset my last commit, tried again, failed again. And one more time and no error messages. I've now nailed it down to the vertical and horizontal constraints on the server image. Pheww, this turned out to be a couple of easy fixes. I just had to remove the constraints on the local view as it's now constrained on the whole view (to allow it to move)
