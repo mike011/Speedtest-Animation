@@ -57,4 +57,8 @@ Well, that went pretty went pretty smooth. I really like how the server and wifi
 
 Uggh, first bug today. The console was spitting out a couple of "Unable to simultaneously satisfy constraints.". So I stashed my changes and re-ran, still saw the problem. So I created a new temp git branch and reset my last commit, tried again, failed again. And one more time and no error messages. I've now nailed it down to the vertical and horizontal constraints on the server image. Pheww, this turned out to be a couple of easy fixes. I just had to remove the constraints on the local view as it's now constrained on the whole view (to allow it to move)
 
-Got the jitter, etc showing, I ended up putting everything in one view and animating that to be shown instead of what I originally did was animation each unit by itself. One thing I know that will change is when real values are added in the sizing of a lot of the views will have to change. 
+Got the jitter, etc showing, I ended up putting everything in one view and animating that to be shown instead of what I originally did was animation each unit by itself. One thing I know that will change is when real values are added in the sizing of a lot of the views will have to change.
+
+So added some fake random values for the upload and download test and noticed that it does NOT transition to a new screen, but hides the jitter etc, and brings up the upload and download to the top of the screen and shows the summary view and brings back up the server and wifi views. I really want to make this change as it looks really good, but I find this view getting quite complicated.
+
+The result view chart I'm easily the most lost on. I've quickly looked at https://github.com/danielgindi/Charts and it might cover what I need. I'm trying to not rely on external libraries, but this view would be a bunch of work if I did it from scratch.

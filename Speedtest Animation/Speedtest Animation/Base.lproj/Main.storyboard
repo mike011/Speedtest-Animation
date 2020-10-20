@@ -68,7 +68,7 @@
                                     <constraint firstItem="Pae-ew-ar4" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="top" id="vZ0-C7-o7e"/>
                                 </constraints>
                             </view>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="xd8-b1-AWH" userLabel="Transfer Image">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="xd8-b1-AWH" userLabel="Current Transfer Image">
                                 <rect key="frame" x="193.5" y="279" width="27" height="27"/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBh-vv-Rda" userLabel="Speed Test Values View">
@@ -226,11 +226,11 @@
                                     <constraint firstAttribute="bottom" secondItem="j8O-ph-KPm" secondAttribute="bottom" id="qhB-pN-sbg"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txx-We-ra0" userLabel="Current Speed View">
-                                <rect key="frame" x="185.5" y="211" width="43" height="70"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txx-We-ra0" userLabel="Current Transfer Speed View">
+                                <rect key="frame" x="202" y="211" width="10" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMq-Bc-V0W" userLabel="Current Speed">
-                                        <rect key="frame" x="0.0" y="0.0" width="43" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMq-Bc-V0W" userLabel="Current Transfer Speed">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="4Bh-nE-i9g"/>
                                         </constraints>
@@ -238,8 +238,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mbps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-rJ-Weo" userLabel="Speed Units">
-                                        <rect key="frame" x="0.0" y="49" width="43" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mbps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxi-rJ-Weo" userLabel="Current Speed Units">
+                                        <rect key="frame" x="-16.5" y="49" width="43" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HDB-WG-gbd"/>
                                         </constraints>
@@ -250,10 +250,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Lxi-rJ-Weo" secondAttribute="trailing" id="8KA-sZ-FTH"/>
                                     <constraint firstAttribute="trailing" secondItem="WMq-Bc-V0W" secondAttribute="trailing" id="IXb-iq-wiM"/>
                                     <constraint firstItem="WMq-Bc-V0W" firstAttribute="top" secondItem="txx-We-ra0" secondAttribute="top" id="MC0-Nh-jmE"/>
-                                    <constraint firstItem="Lxi-rJ-Weo" firstAttribute="leading" secondItem="txx-We-ra0" secondAttribute="leading" id="O6l-jO-XN2"/>
                                     <constraint firstAttribute="height" constant="70" id="QTg-5h-mdi"/>
                                     <constraint firstItem="WMq-Bc-V0W" firstAttribute="leading" secondItem="txx-We-ra0" secondAttribute="leading" id="gAz-xV-mwD"/>
                                     <constraint firstAttribute="bottom" secondItem="Lxi-rJ-Weo" secondAttribute="bottom" id="yxf-KZ-fcy"/>
@@ -509,6 +507,7 @@
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="59e-JJ-QD6" secondAttribute="bottom" constant="40" id="0uc-jC-Uhe"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="25y-3a-2TS"/>
                             <constraint firstItem="aBh-vv-Rda" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" id="2l7-XS-BpK"/>
+                            <constraint firstItem="Lxi-rJ-Weo" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="3L3-zO-Nm0"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="Amo-ed-4sh" secondAttribute="bottom" constant="245" id="4CP-Ns-T6z" userLabel="WIFI Image Vertical Constraint"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="57f-H7-eET"/>
                             <constraint firstItem="txx-We-ra0" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="5Yh-De-AwD"/>
@@ -545,6 +544,7 @@
                     <navigationItem key="navigationItem" id="yqm-2B-eWc"/>
                     <connections>
                         <outlet property="dotsImage" destination="oqp-Ul-K1h" id="8mk-UO-jED"/>
+                        <outlet property="downloadSpeedLabel" destination="59Q-TL-hBE" id="Tb3-ug-0Ik"/>
                         <outlet property="serverButton" destination="v04-B3-AyX" id="f2c-Qp-ffK"/>
                         <outlet property="serverImageHorizontalConstraint" destination="bWo-4L-vfK" id="x8n-MJ-ffw"/>
                         <outlet property="serverImageVerticalConstraint" destination="fI5-lg-BDP" id="fd3-nA-zqv"/>
@@ -557,6 +557,8 @@
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>
                         <outlet property="startButtonSKView" destination="25S-Fh-He3" id="NvH-wM-pDx"/>
                         <outlet property="transferImage" destination="xd8-b1-AWH" id="CnZ-70-OxR"/>
+                        <outlet property="transferSpeedLabel" destination="WMq-Bc-V0W" id="kfG-AR-Nyp"/>
+                        <outlet property="uploadSpeedLabel" destination="sDF-uS-8xJ" id="PvU-re-frg"/>
                         <outlet property="wifiImageVerticalConstraint" destination="4CP-Ns-T6z" id="464-fP-Dhc"/>
                         <outlet property="wifiTitle" destination="fe1-qD-mzm" id="Giw-xP-Eqh"/>
                     </connections>

@@ -15,6 +15,9 @@ class SpeedTestViewController: UIViewController {
     private var speedtestDurationInSeconds = 3
     @IBOutlet weak var speedTestValuesView: UIView!
     @IBOutlet weak var transferImage: UIImageView!
+    @IBOutlet weak var transferSpeedLabel: UILabel!
+    @IBOutlet weak var downloadSpeedLabel: UILabel!
+    @IBOutlet weak var uploadSpeedLabel: UILabel!
 
     // MARK: - Server
     @IBOutlet weak var serverTitle: UILabel!
@@ -44,6 +47,7 @@ class SpeedTestViewController: UIViewController {
     private var speedResultVerticalDefault: CGFloat!
 
     private var viewsAnimationTimer: Timer?
+    private var valuesAnimationTimer: Timer?
 
     // MARK: - Setup
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +83,7 @@ class SpeedTestViewController: UIViewController {
         showDownloadAnimation()
         hideStartButtonTitle()
         startStartButtonAnimation()
-        hideStartButtonAnimation()
+        startViewsAnimationTimer()
         showDotsImages()
         showSpeedTestValues()
         showDownloadImage()
@@ -104,7 +108,7 @@ class SpeedTestViewController: UIViewController {
         return result
     }
 
-    private func hideStartButtonAnimation() {
+    private func startViewsAnimationTimer() {
         viewsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
             self.animateServerViews()
             self.animateWifiViews()
@@ -115,6 +119,10 @@ class SpeedTestViewController: UIViewController {
             if self.startButtonSKView.alpha <= 0 {
                 timer.invalidate()
             }
+        }
+
+        valuesAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { timer in
+            self.animateSpeedValuesViews()
         }
     }
 
@@ -158,6 +166,15 @@ class SpeedTestViewController: UIViewController {
         speedResultVerticalConstraint.constant -= 15
     }
 
+    private func animateSpeedValuesViews() {
+        transferSpeedLabel.text = "\(getCurrentSpeed())"
+    }
+
+    private func getCurrentSpeed() -> String {
+        let value = Float.random(in: 90..<250)
+        return String(format: "%.2f", value);
+    }
+
     private func animateSpeedTestValues() {
         speedTestValuesView.alpha += 0.2
     }
@@ -171,6 +188,7 @@ class SpeedTestViewController: UIViewController {
 
     private func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
+            self.downloadSpeedLabel.text = self.transferSpeedLabel.text
             self.transferImage.image = UIImage(named: "upload")!
             downloadAnimation.remove()
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
@@ -182,6 +200,7 @@ class SpeedTestViewController: UIViewController {
     private func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             uploadAnimation.remove()
+            self.uploadSpeedLabel.text = self.transferSpeedLabel.text
             self.showSummaryViewController()
         }
     }
@@ -206,6 +225,7 @@ class SpeedTestViewController: UIViewController {
         resetConstraints()
         resetSpeedTestValues()
         resetTransferImage()
+        valuesAnimationTimer?.invalidate()
     }
 
     private func resetStartViews() {
@@ -240,6 +260,7 @@ class SpeedTestViewController: UIViewController {
     private func resetSpeedTestValues() {
         speedTestValuesView.isHidden = true
         speedTestValuesView.alpha = 1
+        transferSpeedLabel.text = "-"
     }
 
     private func resetTransferImage() {
