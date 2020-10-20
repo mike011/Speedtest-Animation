@@ -18,182 +18,71 @@ class DownloadAnimation {
     }
 
     func display() {
-        displayDownloadAnimation() // top left to right
-        displayDownloadAnimation2() // top right to left
-        displayDownloadAnimation3() // bottom left to right
-        displayDownloadAnimation4() // bottom right to left
+        displayTopLeftAnimation()
+        displayTopRightAnimation()
+        displayBottomLeftAnimation()
+        displayBottomRightAnimation()
     }
 
     func remove() {
         view.layer.sublayers?.removeAll()
     }
 
-    fileprivate func displayDownloadAnimation() {
+    fileprivate func displayTopLeftAnimation() {
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width/3, height: view.bounds.height)
+        createEmitter(rect: rect, xAcceleration: 10, yAcceleration: 10, velocity: -20, yEmitterPosition: rect.minY)
+    }
+
+    fileprivate func displayTopRightAnimation() {
+        let rect = CGRect(x: view.bounds.width/3, y: 0.0, width: view.bounds.width, height: view.bounds.height)
+        createEmitter(rect: rect, xAcceleration: -10, yAcceleration: 10, velocity: -20, yEmitterPosition: rect.minY)
+    }
+
+    fileprivate func displayBottomLeftAnimation() {
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width/3, height: view.bounds.height)
+        createEmitter(rect: rect, xAcceleration: 10, yAcceleration: -10, velocity: 20, yEmitterPosition: rect.maxY)
+    }
+
+    fileprivate func displayBottomRightAnimation() {
+        let rect = CGRect(x: view.bounds.width/3, y: 0.0, width: view.bounds.width, height: view.bounds.height)
+        createEmitter(rect: rect, xAcceleration: -10, yAcceleration: -10, velocity: 20, yEmitterPosition: rect.maxY)
+    }
+
+    private func createEmitter(rect: CGRect, xAcceleration: CGFloat, yAcceleration: CGFloat, velocity: CGFloat, yEmitterPosition: CGFloat
+    ) {
         let emitter = CAEmitterLayer()
-
-        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width/2, height: view.bounds.height)
-
         emitter.frame = rect
         emitter.emitterShape = CAEmitterLayerEmitterShape.line
         emitter.emitterSize.width = view.bounds.width/2
         emitter.emitterPosition = CGPoint(x: rect.width/2,
-                                          y: rect.minY)
+                                          y: yEmitterPosition)
 
-        emitter.emitterCells = [createDownloadEmitterCell()]
+        emitter.emitterCells = [createDownloadEmitterCell(xAcceleration: xAcceleration, yAcceleration: yAcceleration, velocity: velocity)]
 
         view.layer.addSublayer(emitter)
     }
 
-    fileprivate func createDownloadEmitterCell() -> CAEmitterCell {
+    private func createDownloadEmitterCell(xAcceleration: CGFloat, yAcceleration: CGFloat, velocity: CGFloat) -> CAEmitterCell {
         let emitterCell = CAEmitterCell()
         emitterCell.contents = UIImage.createCircle(withColor: downloadColor).cgImage
 
-        emitterCell.birthRate = 5
+        emitterCell.birthRate = 2.5
 
-        emitterCell.lifetime = 3.5
+        emitterCell.lifetime = 4.5
         emitterCell.lifetimeRange = 1.0
 
-        emitterCell.yAcceleration = 10
-        emitterCell.xAcceleration = 10
-//
-//        //emitterCell.emissionRange = .pi
-        emitterCell.velocity = -20
-//        emitterCell.velocityRange = 200
-//
+        emitterCell.xAcceleration = xAcceleration
+        emitterCell.yAcceleration = yAcceleration
+
+        emitterCell.velocity = velocity
+
         emitterCell.scale = 0.8
         emitterCell.scaleRange = 0.8
         emitterCell.scaleSpeed = -0.15
 
-        emitterCell.alphaRange = 0.75
-        emitterCell.alphaSpeed = -0.15
+        emitterCell.alphaRange = 0.90
+        emitterCell.alphaSpeed = -0.05
 
         return emitterCell
     }
-
-    fileprivate func displayDownloadAnimation2() {
-        let emitter = CAEmitterLayer()
-
-        let rect = CGRect(x: view.bounds.width/2, y: 0.0, width: view.bounds.width, height: view.bounds.height)
-
-        emitter.frame = rect
-        emitter.emitterShape = CAEmitterLayerEmitterShape.line
-        emitter.emitterSize.width = view.bounds.width/2
-        emitter.emitterPosition = CGPoint(x: rect.width/2,
-                                          y: rect.minY)
-
-        emitter.emitterCells = [createDownloadEmitterCell2()]
-
-        view.layer.addSublayer(emitter)
-    }
-
-    fileprivate func createDownloadEmitterCell2() -> CAEmitterCell {
-        let emitterCell = CAEmitterCell()
-        emitterCell.contents = UIImage.createCircle(withColor: downloadColor).cgImage
-
-        emitterCell.birthRate = 5
-
-        emitterCell.lifetime = 3.5
-        emitterCell.lifetimeRange = 1.0
-
-        emitterCell.yAcceleration = 10
-        emitterCell.xAcceleration = -10
-//
-//        //emitterCell.emissionRange = .pi
-        emitterCell.velocity = -20
-//        emitterCell.velocityRange = 200
-//
-        emitterCell.scale = 0.8
-        emitterCell.scaleRange = 0.8
-        emitterCell.scaleSpeed = -0.15
-
-        emitterCell.alphaRange = 0.75
-        emitterCell.alphaSpeed = -0.15
-
-        return emitterCell
-    }
-
-    fileprivate func displayDownloadAnimation3() {
-        let emitter = CAEmitterLayer()
-
-        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width/2, height: view.bounds.height)
-
-        emitter.frame = rect
-        emitter.emitterShape = CAEmitterLayerEmitterShape.line
-        emitter.emitterSize.width = view.bounds.width/2
-        emitter.emitterPosition = CGPoint(x: rect.width/2,
-                                          y: rect.maxY)
-
-        emitter.emitterCells = [createDownloadEmitterCell3()]
-
-        view.layer.addSublayer(emitter)
-    }
-
-    fileprivate func createDownloadEmitterCell3() -> CAEmitterCell {
-        let emitterCell = CAEmitterCell()
-        emitterCell.contents = UIImage.createCircle(withColor: downloadColor).cgImage
-
-        emitterCell.birthRate = 5
-
-        emitterCell.lifetime = 3.5
-        emitterCell.lifetimeRange = 1.0
-
-        emitterCell.yAcceleration = -10
-        emitterCell.xAcceleration = 10
-//
-//        //emitterCell.emissionRange = .pi
-        emitterCell.velocity = 20
-//        emitterCell.velocityRange = 200
-//
-        emitterCell.scale = 0.8
-        emitterCell.scaleRange = 0.8
-        //emitterCell.scaleSpeed = -0.15
-
-        emitterCell.alphaRange = 0.75
-        emitterCell.alphaSpeed = -0.15
-
-        return emitterCell
-    }
-
-    fileprivate func displayDownloadAnimation4() {
-        let emitter = CAEmitterLayer()
-
-        let rect = CGRect(x: view.bounds.width/2, y: 0.0, width: view.bounds.width, height: view.bounds.height)
-
-        emitter.frame = rect
-        emitter.emitterShape = CAEmitterLayerEmitterShape.line
-        emitter.emitterSize.width = view.bounds.width/2
-        emitter.emitterPosition = CGPoint(x: rect.width/2,
-                                          y: rect.maxY)
-
-        emitter.emitterCells = [createDownloadEmitterCell4()]
-
-        view.layer.addSublayer(emitter)
-    }
-
-    fileprivate func createDownloadEmitterCell4() -> CAEmitterCell {
-        let emitterCell = CAEmitterCell()
-        emitterCell.contents = UIImage.createCircle(withColor: downloadColor).cgImage
-
-        emitterCell.birthRate = 5
-
-        emitterCell.lifetime = 3.5
-        emitterCell.lifetimeRange = 1.0
-
-        emitterCell.yAcceleration = -10
-        emitterCell.xAcceleration = -10
-//
-//        //emitterCell.emissionRange = .pi
-        emitterCell.velocity = 20
-//        emitterCell.velocityRange = 200
-
-        emitterCell.scale = 0.8
-        emitterCell.scaleRange = 0.8
-        //emitterCell.scaleSpeed = -0.15
-
-        emitterCell.alphaRange = 0.75
-        emitterCell.alphaSpeed = -0.15
-
-        return emitterCell
-    }
-
 }

@@ -244,6 +244,7 @@ class SpeedTestViewController: UIViewController {
 
     private func resetTransferImage() {
         transferImage.isHidden = true
+        transferImage.image = UIImage(named: "download")!
     }
 
 }
