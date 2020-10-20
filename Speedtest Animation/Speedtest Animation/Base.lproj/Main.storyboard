@@ -361,6 +361,7 @@
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="trailing" secondItem="25S-Fh-He3" secondAttribute="trailing" constant="20" id="8kf-RC-QJ9"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="top" secondItem="59e-JJ-QD6" secondAttribute="top" constant="20" id="CgB-Ly-PgK"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="Fkn-hB-WeZ"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="pK2-gL-RPe" secondAttribute="bottom" constant="311" id="IyI-6o-VxN"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="bottom" secondItem="25S-Fh-He3" secondAttribute="bottom" constant="20" id="Q6p-6n-DrY"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" id="Q8u-wp-aw4"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="CR5-dr-oaM" secondAttribute="bottom" constant="12" id="QuS-6a-gJQ"/>
@@ -375,7 +376,6 @@
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="nBp-ip-Zm5"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="Cb6-3X-iW5" secondAttribute="bottom" id="sCs-DE-xco"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="xE0-ri-2MU"/>
-                            <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="pK2-gL-RPe" secondAttribute="bottom" constant="22" id="xTI-CT-IFV"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="59e-JJ-QD6" secondAttribute="leading" id="xYm-C4-1J3"/>
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="top" secondItem="txx-We-ra0" secondAttribute="bottom" constant="112" id="yke-22-aV8"/>
                         </constraints>
@@ -389,6 +389,7 @@
                         <outlet property="serverImageVerticalConstraint" destination="fI5-lg-BDP" id="fd3-nA-zqv"/>
                         <outlet property="serverSubtitle" destination="ofu-3o-nVO" id="1ys-XW-soF"/>
                         <outlet property="serverTitle" destination="bLT-dX-l4V" id="Msm-2j-Cgi"/>
+                        <outlet property="speedResultVerticalConstraint" destination="IyI-6o-VxN" id="nZH-sO-XVc"/>
                         <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
                         <outlet property="startButton" destination="59e-JJ-QD6" id="mPW-sC-j7W"/>
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>

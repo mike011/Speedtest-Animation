@@ -36,9 +36,11 @@ class SpeedTestViewController: UIViewController {
     private var startButtonScene: SKScene!
 
     // MARK: - Dots
-
     @IBOutlet weak var dotsImage: UIImageView!
 
+    // MARK: - Speed Result
+    @IBOutlet weak var speedResultVerticalConstraint: NSLayoutConstraint!
+    private var speedResultVerticalDefault: CGFloat!
 
     private var viewsAnimationTimer: Timer?
 
@@ -51,16 +53,17 @@ class SpeedTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         constraintSetup()
-        createStartButtonScene()
+        createStartButtonAnimationScene()
     }
 
     private func constraintSetup() {
         serverImageVerticalDefault = serverImageVerticalConstraint.constant
         serverImageHorizontalDefault = serverImageHorizontalConstraint.constant
         wifiImageVerticalDefault = wifiImageVerticalConstraint.constant
+        speedResultVerticalDefault = speedResultVerticalConstraint.constant
     }
 
-    private func createStartButtonScene() {
+    private func createStartButtonAnimationScene() {
         if let view = self.startButtonSKView,
            let scene = SKScene(fileNamed: "StartButton") {
             view.presentScene(scene)
@@ -104,6 +107,7 @@ class SpeedTestViewController: UIViewController {
             self.animateWifiViews()
             self.animateStartViews()
             self.animateDotsImages()
+            self.animateSpeedResultViews()
             if self.startButtonSKView.alpha <= 0 {
                 timer.invalidate()
             }
@@ -135,6 +139,10 @@ class SpeedTestViewController: UIViewController {
 
     private func animateDotsImages() {
         dotsImage.alpha += 0.1
+    }
+
+    fileprivate func animateSpeedResultViews() {
+        self.speedResultVerticalConstraint.constant -= 15
     }
 
     private func showDownloadAnimation() {
@@ -176,6 +184,7 @@ class SpeedTestViewController: UIViewController {
         resetWifiViews()
         resetServerViews()
         resetDotsImages()
+        resetConstraints()
     }
 
     private func resetStartViews() {
@@ -186,20 +195,25 @@ class SpeedTestViewController: UIViewController {
 
     private func resetWifiViews() {
         wifiTitle.alpha = 1
-        wifiImageVerticalConstraint.constant = wifiImageVerticalDefault
+
     }
 
     private func resetServerViews() {
         serverTitle.alpha = 1
         serverSubtitle.alpha = 1
         serverButton.alpha = 1
-        serverImageVerticalConstraint.constant = serverImageVerticalDefault
-        serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
     }
 
     private func resetDotsImages() {
         dotsImage.isHidden = true
         dotsImage.alpha = 1
+    }
+
+    private func resetConstraints() {
+        wifiImageVerticalConstraint.constant = wifiImageVerticalDefault
+        serverImageVerticalConstraint.constant = serverImageVerticalDefault
+        serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
+        speedResultVerticalConstraint.constant = speedResultVerticalDefault
     }
 }
 
