@@ -12,8 +12,9 @@ class SpeedTestViewController: UIViewController {
 
     // MARK: - Speed Test
     @IBOutlet weak var speedTestView: UIView!
-    private var speedtestDurationInSeconds = 1
+    private var speedtestDurationInSeconds = 3
     @IBOutlet weak var speedTestValuesView: UIView!
+    @IBOutlet weak var transferImage: UIImageView!
 
     // MARK: - Server
     @IBOutlet weak var serverTitle: UILabel!
@@ -81,6 +82,7 @@ class SpeedTestViewController: UIViewController {
         hideStartButtonAnimation()
         showDotsImages()
         showSpeedTestValues()
+        showDownloadImage()
     }
 
     private func hideStartButtonTitle() {
@@ -126,6 +128,10 @@ class SpeedTestViewController: UIViewController {
         speedTestValuesView.alpha = 0
     }
 
+    private func showDownloadImage() {
+        transferImage.isHidden = false
+    }
+
     private func animateServerViews() {
         serverTitle.alpha -= 0.1
         serverSubtitle.alpha -= 0.1
@@ -155,6 +161,7 @@ class SpeedTestViewController: UIViewController {
     private func animateSpeedTestValues() {
         speedTestValuesView.alpha += 0.2
     }
+    
 
     private func showDownloadAnimation() {
         let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
@@ -164,6 +171,7 @@ class SpeedTestViewController: UIViewController {
 
     private func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
+            self.transferImage.image = UIImage(named: "upload")!
             downloadAnimation.remove()
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
             uploadAnimation.display()
@@ -197,6 +205,7 @@ class SpeedTestViewController: UIViewController {
         resetDotsImages()
         resetConstraints()
         resetSpeedTestValues()
+        resetTransferImage()
     }
 
     private func resetStartViews() {
@@ -232,5 +241,10 @@ class SpeedTestViewController: UIViewController {
         speedTestValuesView.isHidden = true
         speedTestValuesView.alpha = 1
     }
+
+    private func resetTransferImage() {
+        transferImage.isHidden = true
+    }
+
 }
 

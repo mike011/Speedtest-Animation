@@ -33,6 +33,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-3X-iW5" userLabel="Speed Test View">
+                                <rect key="frame" x="0.0" y="79" width="414" height="445"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-Ga-ObL" userLabel="Title View">
                                 <rect key="frame" x="142" y="44" width="130" height="35"/>
                                 <subviews>
@@ -64,10 +68,9 @@
                                     <constraint firstItem="Pae-ew-ar4" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="top" id="vZ0-C7-o7e"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-3X-iW5" userLabel="Speed Test View">
-                                <rect key="frame" x="0.0" y="79" width="414" height="445"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="xd8-b1-AWH" userLabel="Transfer Image">
+                                <rect key="frame" x="193.5" y="279" width="27" height="27"/>
+                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBh-vv-Rda" userLabel="Speed Test Values View">
                                 <rect key="frame" x="0.0" y="79" width="414" height="21"/>
                                 <subviews>
@@ -516,6 +519,7 @@
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="trailing" secondItem="25S-Fh-He3" secondAttribute="trailing" constant="20" id="8kf-RC-QJ9"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="top" secondItem="59e-JJ-QD6" secondAttribute="top" constant="20" id="CgB-Ly-PgK"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="Fkn-hB-WeZ"/>
+                            <constraint firstItem="xd8-b1-AWH" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" constant="235" id="HXx-Us-aSA"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="pK2-gL-RPe" secondAttribute="bottom" constant="311" id="IyI-6o-VxN"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="bottom" secondItem="25S-Fh-He3" secondAttribute="bottom" constant="20" id="Q6p-6n-DrY"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" id="Q8u-wp-aw4"/>
@@ -530,6 +534,7 @@
                             <constraint firstItem="Sqd-pR-SxC" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="gtR-AC-8rd"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="oqp-Ul-K1h" secondAttribute="bottom" constant="65" id="hB1-Ig-crp"/>
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="nBp-ip-Zm5"/>
+                            <constraint firstItem="xd8-b1-AWH" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="s0D-JA-eRj"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="Cb6-3X-iW5" secondAttribute="bottom" id="sCs-DE-xco"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="xE0-ri-2MU"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="59e-JJ-QD6" secondAttribute="leading" id="xYm-C4-1J3"/>
@@ -551,6 +556,7 @@
                         <outlet property="startButton" destination="59e-JJ-QD6" id="mPW-sC-j7W"/>
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>
                         <outlet property="startButtonSKView" destination="25S-Fh-He3" id="NvH-wM-pDx"/>
+                        <outlet property="transferImage" destination="xd8-b1-AWH" id="CnZ-70-OxR"/>
                         <outlet property="wifiImageVerticalConstraint" destination="4CP-Ns-T6z" id="464-fP-Dhc"/>
                         <outlet property="wifiTitle" destination="fe1-qD-mzm" id="Giw-xP-Eqh"/>
                     </connections>
