@@ -10,15 +10,39 @@ import UIKit
 
 class SpeedTestViewController: UIViewController {
 
+    // MARK: - Speed Test
     @IBOutlet weak var speedTestView: UIView!
+    private var speedtestDurationInSeconds = 1
+
+    // MARK: - Server
+    @IBOutlet weak var serverTitle: UILabel!
+    @IBOutlet weak var serverSubtitle: UILabel!
+    @IBOutlet weak var serverButton: UIButton!
+    @IBOutlet weak var serverImageVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var serverImageHorizontalConstraint: NSLayoutConstraint!
+    private var serverImageVerticalDefault: CGFloat!
+    private var serverImageHorizontalDefault: CGFloat!
+
+
+    // MARK: - WIFI
+    @IBOutlet weak var wifiTitle: UILabel!
+    @IBOutlet weak var wifiImageVerticalConstraint: NSLayoutConstraint!
+    private var wifiImageVerticalDefault: CGFloat!
+
+    // MARK: - Start Button
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var startButtonSKView: SKView!
     @IBOutlet weak var startButtonGlowView: UIImageView!
-    private var displayDurationInSeconds = 1
-    private var hideStartButtonAnimationTimer: Timer?
+    private var startButtonScene: SKScene!
 
-    private var scene: SKScene?
+    // MARK: - Dots
 
+    @IBOutlet weak var dotsImage: UIImageView!
+
+
+    private var viewsAnimationTimer: Timer?
+
+    // MARK: - Setup
     override func viewWillAppear(_ animated: Bool) {
         view.setGradientBackground()
         super.viewWillAppear(animated)
@@ -26,39 +50,47 @@ class SpeedTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let view = self.startButtonSKView {
-            if let scene = SKScene(fileNamed: "StartButton") {
-                view.presentScene(scene)
-                scene.backgroundColor = .clear
-                self.scene = scene
-            }
+        constraintSetup()
+        createStartButtonScene()
+    }
+
+    private func constraintSetup() {
+        serverImageVerticalDefault = serverImageVerticalConstraint.constant
+        serverImageHorizontalDefault = serverImageHorizontalConstraint.constant
+        wifiImageVerticalDefault = wifiImageVerticalConstraint.constant
+    }
+
+    private func createStartButtonScene() {
+        if let view = self.startButtonSKView,
+           let scene = SKScene(fileNamed: "StartButton") {
+            view.presentScene(scene)
+            scene.backgroundColor = .clear
+            startButtonScene = scene
         }
     }
 
-    fileprivate func showStartButton() {
-        startButton.isHidden = false
-    }
+    // MARK: - Start Button Pressed
 
     @IBAction func startButtonPressed(_fsender: Any) {
         showDownloadAnimation()
-
         hideStartButtonTitle()
         startStartButtonAnimation()
         hideStartButtonAnimation()
+        showDotsImages()
     }
 
-    fileprivate func hideStartButtonTitle() {
+    private func hideStartButtonTitle() {
         startButton.isHidden = true
     }
 
-    fileprivate func startStartButtonAnimation() {
+    private func startStartButtonAnimation() {
         let action = SKAction.animate(with: getTextures(), timePerFrame: 0.04)
         let animation = SKSpriteNode(imageNamed: "1.png")
         animation.run(action)
-        scene?.addChild(animation)
+        startButtonScene?.addChild(animation)
     }
 
-    func getTextures() -> [SKTexture] {
+    private func getTextures() -> [SKTexture] {
         var result = [SKTexture]()
         for i in 1...7 {
             result.append(SKTexture(imageNamed: "\(i).png"))
@@ -66,23 +98,52 @@ class SpeedTestViewController: UIViewController {
         return result
     }
 
-    fileprivate func hideStartButtonAnimation() {
-        hideStartButtonAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
-            self.startButtonSKView.alpha -= 0.1
+    private func hideStartButtonAnimation() {
+        viewsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
+            self.animateServerViews()
+            self.animateWifiViews()
+            self.animateStartViews()
+            self.animateDotsImages()
             if self.startButtonSKView.alpha <= 0 {
                 timer.invalidate()
-                self.startButtonGlowView.isHidden = true
             }
         }
     }
 
-    fileprivate func showDownloadAnimation() {
+    private func showDotsImages() {
+        dotsImage.isHidden = false
+        dotsImage.alpha = 0
+    }
+
+    private func animateServerViews() {
+        serverTitle.alpha -= 0.1
+        serverSubtitle.alpha -= 0.1
+        serverButton.alpha -= 0.1
+        serverImageVerticalConstraint.constant -= 25
+        serverImageHorizontalConstraint.constant += 10
+    }
+
+    private func animateWifiViews() {
+        wifiTitle.alpha -= 0.1
+        wifiImageVerticalConstraint.constant -= 19
+    }
+
+    private func animateStartViews() {
+        startButtonSKView.alpha -= 0.1
+        startButtonGlowView.alpha -= 0.1
+    }
+
+    private func animateDotsImages() {
+        dotsImage.alpha += 0.1
+    }
+
+    private func showDownloadAnimation() {
         let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
         downloadAnimation.display()
         downloadAnimationCompleted(downloadAnimation)
     }
 
-    fileprivate func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
+    private func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             downloadAnimation.remove()
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
@@ -91,7 +152,7 @@ class SpeedTestViewController: UIViewController {
         }
     }
 
-    fileprivate func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
+    private func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             uploadAnimation.remove()
             self.showSummaryViewController()
@@ -99,18 +160,46 @@ class SpeedTestViewController: UIViewController {
     }
 
     private func getDuration() -> DispatchTime {
-        return .now() + .milliseconds(displayDurationInSeconds * 1000)
+        return .now() + .milliseconds(speedtestDurationInSeconds * 1000)
     }
 
-    func showSummaryViewController() {
+    private func showSummaryViewController() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let summaryViewController = storyBoard.instantiateViewController(withIdentifier: "summaryViewController")
         present(summaryViewController, animated: true, completion: reset)
     }
 
-    func reset() {
+    // MARK: - Clean Up
+
+    private func reset() {
+        resetStartViews()
+        resetWifiViews()
+        resetServerViews()
+        resetDotsImages()
+    }
+
+    private func resetStartViews() {
+        startButton.isHidden = false
         startButtonSKView.alpha = 1
-        showStartButton()
+        startButtonGlowView.alpha = 1
+    }
+
+    private func resetWifiViews() {
+        wifiTitle.alpha = 1
+        wifiImageVerticalConstraint.constant = wifiImageVerticalDefault
+    }
+
+    private func resetServerViews() {
+        serverTitle.alpha = 1
+        serverSubtitle.alpha = 1
+        serverButton.alpha = 1
+        serverImageVerticalConstraint.constant = serverImageVerticalDefault
+        serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
+    }
+
+    private func resetDotsImages() {
+        dotsImage.isHidden = true
+        dotsImage.alpha = 1
     }
 }
 

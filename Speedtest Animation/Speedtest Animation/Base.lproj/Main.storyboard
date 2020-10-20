@@ -212,15 +212,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CR5-dr-oaM" userLabel="Server View">
                                 <rect key="frame" x="122" y="591" width="170" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="HWY-lN-Zcr">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="world" translatesAutoresizingMaskIntoConstraints="NO" id="HWY-lN-Zcr" userLabel="Server Image">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="dr6-u8-iOT"/>
                                             <constraint firstAttribute="height" constant="44" id="xu6-NQ-3JG"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YunJinTianFu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLT-dX-l4V">
-                                        <rect key="frame" x="49" y="0.0" width="99" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YunJinTianFu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLT-dX-l4V" userLabel="Server Title">
+                                        <rect key="frame" x="50" y="0.0" width="96" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="iUs-nx-u2d"/>
                                         </constraints>
@@ -228,8 +228,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chengdu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofu-3o-nVO">
-                                        <rect key="frame" x="49" y="20" width="78" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chengdu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofu-3o-nVO" userLabel="Server Subtitle">
+                                        <rect key="frame" x="50" y="20" width="78" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="Lh2-eZ-Vxj"/>
                                             <constraint firstAttribute="height" constant="23" id="fmr-qq-eKP"/>
@@ -259,7 +259,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="v04-B3-AyX" firstAttribute="leading" secondItem="bLT-dX-l4V" secondAttribute="trailing" constant="2" id="0Yk-tm-5nI"/>
+                                    <constraint firstItem="v04-B3-AyX" firstAttribute="leading" secondItem="bLT-dX-l4V" secondAttribute="trailing" constant="4" id="1aZ-nn-3JV"/>
                                     <constraint firstItem="bLT-dX-l4V" firstAttribute="leading" secondItem="ofu-3o-nVO" secondAttribute="leading" id="BQS-oj-9WV"/>
                                     <constraint firstItem="bLT-dX-l4V" firstAttribute="top" secondItem="CR5-dr-oaM" secondAttribute="top" id="BmU-UK-TQz"/>
                                     <constraint firstItem="HWY-lN-Zcr" firstAttribute="leading" secondItem="CR5-dr-oaM" secondAttribute="leading" id="C6z-Ga-hku"/>
@@ -270,20 +270,19 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ofu-3o-nVO" secondAttribute="trailing" constant="20" symbolic="YES" id="idQ-Xd-Zvr"/>
                                     <constraint firstAttribute="height" constant="50" id="n2B-Bd-lsz"/>
                                     <constraint firstAttribute="width" constant="170" id="oEw-6O-y34"/>
-                                    <constraint firstItem="ofu-3o-nVO" firstAttribute="leading" secondItem="HWY-lN-Zcr" secondAttribute="trailing" constant="5" id="uMW-nZ-YfA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-g3-ehh" userLabel="WIFI View">
                                 <rect key="frame" x="122" y="524" width="170" height="44"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-ed-4sh">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-ed-4sh" userLabel="WIFI Image">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="3Y7-L3-v1Z"/>
                                             <constraint firstAttribute="height" constant="44" id="QDc-BT-C3F"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="China Telecom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-qD-mzm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="China Telecom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-qD-mzm" userLabel="WIFI Title">
                                         <rect key="frame" x="49" y="7" width="121" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ik9-xu-gTB"/>
@@ -300,7 +299,6 @@
                                     <constraint firstItem="Amo-ed-4sh" firstAttribute="leading" secondItem="8as-g3-ehh" secondAttribute="leading" id="WRe-lo-Ip1"/>
                                     <constraint firstAttribute="width" constant="170" id="aW4-0E-FvC"/>
                                     <constraint firstAttribute="trailing" secondItem="fe1-qD-mzm" secondAttribute="trailing" id="cEw-JA-srO"/>
-                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="centerY" secondItem="8as-g3-ehh" secondAttribute="centerY" id="p3L-gx-1a3"/>
                                     <constraint firstItem="fe1-qD-mzm" firstAttribute="leading" secondItem="Amo-ed-4sh" secondAttribute="trailing" constant="5" id="sLr-TR-37O"/>
                                 </constraints>
                             </view>
@@ -342,14 +340,22 @@
                                     <action selector="startButtonPressedWith_fsender:" destination="wqN-K5-oey" eventType="touchUpInside" id="dkV-WI-vpK"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-Ul-K1h">
+                                <rect key="frame" x="163.5" y="728" width="55" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="nRv-q4-Gw6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SWQ-gF-OsA"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="59e-JJ-QD6" secondAttribute="bottom" constant="40" id="0uc-jC-Uhe"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="25y-3a-2TS"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="Amo-ed-4sh" secondAttribute="bottom" constant="245" id="4CP-Ns-T6z" userLabel="WIFI Image Vertical Constraint"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="57f-H7-eET"/>
                             <constraint firstItem="txx-We-ra0" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="5Yh-De-AwD"/>
+                            <constraint firstItem="oqp-Ul-K1h" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" constant="-16" id="6c7-ff-sAc"/>
                             <constraint firstItem="CR5-dr-oaM" firstAttribute="top" secondItem="8as-g3-ehh" secondAttribute="bottom" constant="23" id="6vO-81-D0v"/>
                             <constraint firstItem="Cb6-3X-iW5" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="bottom" id="8Se-eJ-5PA"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="trailing" secondItem="25S-Fh-He3" secondAttribute="trailing" constant="20" id="8kf-RC-QJ9"/>
@@ -362,7 +368,10 @@
                             <constraint firstItem="Cb6-3X-iW5" firstAttribute="trailing" secondItem="SWQ-gF-OsA" secondAttribute="trailing" id="Yqp-sd-fxR"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="Sqd-pR-SxC" secondAttribute="top" constant="14" id="a1n-Z9-WnG"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="leading" secondItem="59e-JJ-QD6" secondAttribute="leading" constant="20" id="aku-lb-rUE"/>
+                            <constraint firstItem="HWY-lN-Zcr" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" constant="122" id="bWo-4L-vfK"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="HWY-lN-Zcr" secondAttribute="bottom" constant="178" id="fI5-lg-BDP"/>
                             <constraint firstItem="Sqd-pR-SxC" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="gtR-AC-8rd"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="oqp-Ul-K1h" secondAttribute="bottom" constant="65" id="hB1-Ig-crp"/>
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="nBp-ip-Zm5"/>
                             <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="Cb6-3X-iW5" secondAttribute="bottom" id="sCs-DE-xco"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="xE0-ri-2MU"/>
@@ -374,10 +383,18 @@
                     <tabBarItem key="tabBarItem" title="" image="first-tab" selectedImage="first-tab-selected" id="4Vv-9w-MmK"/>
                     <navigationItem key="navigationItem" id="yqm-2B-eWc"/>
                     <connections>
+                        <outlet property="dotsImage" destination="oqp-Ul-K1h" id="8mk-UO-jED"/>
+                        <outlet property="serverButton" destination="v04-B3-AyX" id="f2c-Qp-ffK"/>
+                        <outlet property="serverImageHorizontalConstraint" destination="bWo-4L-vfK" id="x8n-MJ-ffw"/>
+                        <outlet property="serverImageVerticalConstraint" destination="fI5-lg-BDP" id="fd3-nA-zqv"/>
+                        <outlet property="serverSubtitle" destination="ofu-3o-nVO" id="1ys-XW-soF"/>
+                        <outlet property="serverTitle" destination="bLT-dX-l4V" id="Msm-2j-Cgi"/>
                         <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
                         <outlet property="startButton" destination="59e-JJ-QD6" id="mPW-sC-j7W"/>
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>
                         <outlet property="startButtonSKView" destination="25S-Fh-He3" id="NvH-wM-pDx"/>
+                        <outlet property="wifiImageVerticalConstraint" destination="4CP-Ns-T6z" id="464-fP-Dhc"/>
+                        <outlet property="wifiTitle" destination="fe1-qD-mzm" id="Giw-xP-Eqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbI-02-2vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -871,6 +888,7 @@
         <image name="arrow" width="13" height="12.5"/>
         <image name="backArrow" width="26" height="18"/>
         <image name="dot" width="7" height="8"/>
+        <image name="dots" width="79" height="20"/>
         <image name="download" width="27" height="27"/>
         <image name="first-tab" width="26.5" height="26.5"/>
         <image name="first-tab-selected" width="26.5" height="26.5"/>
