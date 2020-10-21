@@ -21,6 +21,18 @@
 		4CD8C835253E2E29008FB158 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82E253E2E29008FB158 /* 6.png */; };
 		4CD8C836253E2E29008FB158 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82F253E2E29008FB158 /* 7.png */; };
 		4CD8C837253E2E29008FB158 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C830253E2E29008FB158 /* 4.png */; };
+		4CD8C8402540766A008FB158 /* ServerArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C83F2540766A008FB158 /* ServerArgs.swift */; };
+		4CD8C847254079D8008FB158 /* WifiImageDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C846254079D8008FB158 /* WifiImageDownAnimation.swift */; };
+		4CD8C84D254093E9008FB158 /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C84C254093E9008FB158 /* TimerAnimation.swift */; };
+		4CD8C85225409C96008FB158 /* ServerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C85125409C96008FB158 /* ServerAnimation.swift */; };
+		4CD8C85E25409F25008FB158 /* WifiArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C85D25409F25008FB158 /* WifiArgs.swift */; };
+		4CD8C8632540A318008FB158 /* StartButtonHideBackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C8622540A318008FB158 /* StartButtonHideBackgroundAnimation.swift */; };
+		4CD8C86C2540A5A0008FB158 /* StartButtonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C86B2540A5A0008FB158 /* StartButtonAnimation.swift */; };
+		4CD8C8702540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C86F2540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift */; };
+		4CD8C87A2540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C8792540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift */; };
+		4CD8C8882540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C8872540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift */; };
+		4CD8C88C2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C88B2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift */; };
+		4CD8C8902540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD8C88F2540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift */; };
 		4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B66253C952100E6631E /* DownloadAnimation.swift */; };
 		4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */; };
 		4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B6C253C979800E6631E /* UploadAnimation.swift */; };
@@ -46,6 +58,18 @@
 		4CD8C82E253E2E29008FB158 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		4CD8C82F253E2E29008FB158 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		4CD8C830253E2E29008FB158 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		4CD8C83F2540766A008FB158 /* ServerArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerArgs.swift; sourceTree = "<group>"; };
+		4CD8C846254079D8008FB158 /* WifiImageDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiImageDownAnimation.swift; sourceTree = "<group>"; };
+		4CD8C84C254093E9008FB158 /* TimerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
+		4CD8C85125409C96008FB158 /* ServerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAnimation.swift; sourceTree = "<group>"; };
+		4CD8C85D25409F25008FB158 /* WifiArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiArgs.swift; sourceTree = "<group>"; };
+		4CD8C8622540A318008FB158 /* StartButtonHideBackgroundAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonHideBackgroundAnimation.swift; sourceTree = "<group>"; };
+		4CD8C86B2540A5A0008FB158 /* StartButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonAnimation.swift; sourceTree = "<group>"; };
+		4CD8C86F2540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestCompleteShowButtonsAnimation.swift; sourceTree = "<group>"; };
+		4CD8C8792540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiImageLeftAndTextDownAnimation.swift; sourceTree = "<group>"; };
+		4CD8C8872540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiImageRightAndTextUpAnimation.swift; sourceTree = "<group>"; };
+		4CD8C88B2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestCompleteHideButtonsAnimation.swift; sourceTree = "<group>"; };
+		4CD8C88F2540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonShowBackgroundAnimation.swift; sourceTree = "<group>"; };
 		4CE72B66253C952100E6631E /* DownloadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAnimation.swift; sourceTree = "<group>"; };
 		4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		4CE72B6C253C979800E6631E /* UploadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAnimation.swift; sourceTree = "<group>"; };
@@ -84,6 +108,8 @@
 		4C39F487253B292400708FD7 /* Speedtest Animation */ = {
 			isa = PBXGroup;
 			children = (
+				4CE72B8E253E224100E6631E /* StartButton.sks */,
+				4CD8C84A25408A85008FB158 /* Animations */,
 				4CE72B7E253E09FC00E6631E /* img */,
 				4C39F488253B292400708FD7 /* AppDelegate.swift */,
 				4C39F48A253B292400708FD7 /* SceneDelegate.swift */,
@@ -98,9 +124,59 @@
 				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
 				4CE72B73253CC81700E6631E /* SummaryViewController.swift */,
 				4CE72B77253CCEED00E6631E /* UIView+Extension.swift */,
-				4CE72B8E253E224100E6631E /* StartButton.sks */,
 			);
 			path = "Speedtest Animation";
+			sourceTree = "<group>";
+		};
+		4CD8C84A25408A85008FB158 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */,
+				4CD8C8612540A30C008FB158 /* StartButton */,
+				4CD8C85625409D22008FB158 /* Wifi */,
+				4CD8C84F25409C82008FB158 /* Server */,
+				4CD8C84C254093E9008FB158 /* TimerAnimation.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		4CD8C84F25409C82008FB158 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8C85125409C96008FB158 /* ServerAnimation.swift */,
+				4CD8C83F2540766A008FB158 /* ServerArgs.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		4CD8C85625409D22008FB158 /* Wifi */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8C85D25409F25008FB158 /* WifiArgs.swift */,
+				4CD8C846254079D8008FB158 /* WifiImageDownAnimation.swift */,
+				4CD8C8792540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift */,
+				4CD8C8872540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift */,
+			);
+			path = Wifi;
+			sourceTree = "<group>";
+		};
+		4CD8C8612540A30C008FB158 /* StartButton */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8C86B2540A5A0008FB158 /* StartButtonAnimation.swift */,
+				4CD8C8622540A318008FB158 /* StartButtonHideBackgroundAnimation.swift */,
+				4CD8C88F2540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift */,
+			);
+			path = StartButton;
+			sourceTree = "<group>";
+		};
+		4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */ = {
+			isa = PBXGroup;
+			children = (
+				4CD8C86F2540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift */,
+				4CD8C88B2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift */,
+			);
+			path = SpeedTestCompleteButtons;
 			sourceTree = "<group>";
 		};
 		4CE72B7E253E09FC00E6631E /* img */ = {
@@ -198,12 +274,24 @@
 				4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */,
 				4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */,
 				4C39F48D253B292400708FD7 /* ViewController.swift in Sources */,
+				4CD8C86C2540A5A0008FB158 /* StartButtonAnimation.swift in Sources */,
+				4CD8C87A2540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift in Sources */,
+				4CD8C85225409C96008FB158 /* ServerAnimation.swift in Sources */,
 				4CE72B74253CC81700E6631E /* SummaryViewController.swift in Sources */,
+				4CD8C85E25409F25008FB158 /* WifiArgs.swift in Sources */,
+				4CD8C8632540A318008FB158 /* StartButtonHideBackgroundAnimation.swift in Sources */,
 				4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */,
 				4CE72B78253CCEED00E6631E /* UIView+Extension.swift in Sources */,
 				4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */,
+				4CD8C8902540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift in Sources */,
+				4CD8C847254079D8008FB158 /* WifiImageDownAnimation.swift in Sources */,
+				4CD8C8402540766A008FB158 /* ServerArgs.swift in Sources */,
+				4CD8C8702540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift in Sources */,
 				4C39F489253B292400708FD7 /* AppDelegate.swift in Sources */,
 				4C39F48B253B292400708FD7 /* SceneDelegate.swift in Sources */,
+				4CD8C88C2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift in Sources */,
+				4CD8C84D254093E9008FB158 /* TimerAnimation.swift in Sources */,
+				4CD8C8882540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

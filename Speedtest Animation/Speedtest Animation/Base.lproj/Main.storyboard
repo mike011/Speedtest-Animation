@@ -36,6 +36,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb6-3X-iW5" userLabel="Speed Test View">
                                 <rect key="frame" x="0.0" y="79" width="414" height="445"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="445" id="83u-Ow-1Bi"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-Ga-ObL" userLabel="Title View">
                                 <rect key="frame" x="142" y="44" width="130" height="35"/>
@@ -426,8 +429,9 @@
                                     <constraint firstAttribute="width" constant="170" id="oEw-6O-y34"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-g3-ehh" userLabel="WIFI View">
-                                <rect key="frame" x="122" y="524" width="170" height="44"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8as-g3-ehh" userLabel="WIFI View">
+                                <rect key="frame" x="122" y="524" width="170" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="Amo-ed-4sh" userLabel="WIFI Image">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -437,23 +441,23 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="China Telecom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-qD-mzm" userLabel="WIFI Title">
-                                        <rect key="frame" x="49" y="7" width="121" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ik9-xu-gTB"/>
-                                        </constraints>
+                                        <rect key="frame" x="55" y="4.5" width="107" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likeve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZp-59-f6X" userLabel="WIFI Subtitle">
+                                        <rect key="frame" x="55" y="25" width="107" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="centerY" secondItem="Amo-ed-4sh" secondAttribute="centerY" id="055-mm-svz"/>
-                                    <constraint firstAttribute="height" constant="44" id="TU6-Og-qL8"/>
-                                    <constraint firstItem="Amo-ed-4sh" firstAttribute="leading" secondItem="8as-g3-ehh" secondAttribute="leading" id="WRe-lo-Ip1"/>
-                                    <constraint firstAttribute="width" constant="170" id="aW4-0E-FvC"/>
-                                    <constraint firstAttribute="trailing" secondItem="fe1-qD-mzm" secondAttribute="trailing" id="cEw-JA-srO"/>
-                                    <constraint firstItem="fe1-qD-mzm" firstAttribute="leading" secondItem="Amo-ed-4sh" secondAttribute="trailing" constant="5" id="sLr-TR-37O"/>
+                                    <constraint firstItem="BZp-59-f6X" firstAttribute="trailing" secondItem="fe1-qD-mzm" secondAttribute="trailing" id="IdY-j3-gfH"/>
+                                    <constraint firstItem="BZp-59-f6X" firstAttribute="leading" secondItem="fe1-qD-mzm" secondAttribute="leading" id="jmg-A0-6pg"/>
+                                    <constraint firstItem="BZp-59-f6X" firstAttribute="top" secondItem="fe1-qD-mzm" secondAttribute="bottom" constant="1" id="xoQ-yk-8oD"/>
                                 </constraints>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-pR-SxC" userLabel="Start Glow">
@@ -491,7 +495,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="startButtonPressedWith_fsender:" destination="wqN-K5-oey" eventType="touchUpInside" id="dkV-WI-vpK"/>
+                                    <action selector="startButtonPressed:" destination="wqN-K5-oey" eventType="touchUpInside" id="rP0-pZ-fJg"/>
                                 </connections>
                             </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-Ul-K1h">
@@ -500,6 +504,55 @@
                                     <constraint firstAttribute="width" constant="55" id="nRv-q4-Gw6"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qu-z6-fcP" userLabel="Speed Test Finished Buttons View">
+                                <rect key="frame" x="107" y="728" width="200" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrm-Ly-OyF" userLabel="Back Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="45"/>
+                                        <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="66Y-IP-gpu"/>
+                                        </constraints>
+                                        <state key="normal" image="backArrow"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="wqN-K5-oey" eventType="touchUpInside" id="Jhd-99-4Y3"/>
+                                            <action selector="backButtonPressed:" destination="DV0-ic-HTj" eventType="touchUpInside" id="bPK-sy-ROe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZM-Od-E5D" userLabel="Share Button">
+                                        <rect key="frame" x="110" y="0.0" width="90" height="45"/>
+                                        <color key="backgroundColor" name="StartButtonBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="P6K-mp-6GB"/>
+                                            <constraint firstAttribute="width" constant="90" id="uFC-bH-LA5"/>
+                                        </constraints>
+                                        <state key="normal" image="share"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mrm-Ly-OyF" secondAttribute="bottom" id="5ni-oj-6lq"/>
+                                    <constraint firstAttribute="bottom" secondItem="mrm-Ly-OyF" secondAttribute="bottom" id="6wj-CA-gdY"/>
+                                    <constraint firstAttribute="height" constant="45" id="Fvh-oa-dQk"/>
+                                    <constraint firstItem="mrm-Ly-OyF" firstAttribute="leading" secondItem="8Qu-z6-fcP" secondAttribute="leading" id="J4K-tD-VKh"/>
+                                    <constraint firstAttribute="bottom" secondItem="eZM-Od-E5D" secondAttribute="bottom" id="KXg-Ck-zLU"/>
+                                    <constraint firstAttribute="trailing" secondItem="eZM-Od-E5D" secondAttribute="trailing" id="NOq-wP-iFB"/>
+                                    <constraint firstItem="eZM-Od-E5D" firstAttribute="top" secondItem="8Qu-z6-fcP" secondAttribute="top" id="UiS-MS-OJm"/>
+                                    <constraint firstItem="mrm-Ly-OyF" firstAttribute="top" secondItem="8Qu-z6-fcP" secondAttribute="top" id="V6w-wZ-6b0"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZNa-Ty-jNF"/>
+                                    <constraint firstItem="mrm-Ly-OyF" firstAttribute="top" secondItem="8Qu-z6-fcP" secondAttribute="top" id="vFc-nz-rLo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SWQ-gF-OsA"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -512,13 +565,14 @@
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="57f-H7-eET"/>
                             <constraint firstItem="txx-We-ra0" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="5Yh-De-AwD"/>
                             <constraint firstItem="oqp-Ul-K1h" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" constant="-16" id="6c7-ff-sAc"/>
-                            <constraint firstItem="CR5-dr-oaM" firstAttribute="top" secondItem="8as-g3-ehh" secondAttribute="bottom" constant="23" id="6vO-81-D0v"/>
                             <constraint firstItem="aBh-vv-Rda" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="bottom" id="7AB-iH-lrj"/>
                             <constraint firstItem="Cb6-3X-iW5" firstAttribute="top" secondItem="biZ-Ga-ObL" secondAttribute="bottom" id="8Se-eJ-5PA"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="trailing" secondItem="25S-Fh-He3" secondAttribute="trailing" constant="20" id="8kf-RC-QJ9"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="top" secondItem="59e-JJ-QD6" secondAttribute="top" constant="20" id="CgB-Ly-PgK"/>
-                            <constraint firstItem="8as-g3-ehh" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="Fkn-hB-WeZ"/>
+                            <constraint firstItem="Amo-ed-4sh" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" constant="122" id="DG3-PL-DVk"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="fe1-qD-mzm" secondAttribute="bottom" constant="265" id="EPc-wz-psW"/>
                             <constraint firstItem="xd8-b1-AWH" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" constant="235" id="HXx-Us-aSA"/>
+                            <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="8Qu-z6-fcP" secondAttribute="bottom" constant="40" id="IDw-UM-e2P"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="pK2-gL-RPe" secondAttribute="bottom" constant="311" id="IyI-6o-VxN"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="bottom" secondItem="25S-Fh-He3" secondAttribute="bottom" constant="20" id="Q6p-6n-DrY"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="top" secondItem="SWQ-gF-OsA" secondAttribute="top" id="Q8u-wp-aw4"/>
@@ -527,14 +581,15 @@
                             <constraint firstItem="Cb6-3X-iW5" firstAttribute="trailing" secondItem="SWQ-gF-OsA" secondAttribute="trailing" id="Yqp-sd-fxR"/>
                             <constraint firstItem="59e-JJ-QD6" firstAttribute="top" secondItem="Sqd-pR-SxC" secondAttribute="top" constant="14" id="a1n-Z9-WnG"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="leading" secondItem="59e-JJ-QD6" secondAttribute="leading" constant="20" id="aku-lb-rUE"/>
+                            <constraint firstItem="fe1-qD-mzm" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" constant="177" id="bLZ-Q6-cKG"/>
                             <constraint firstItem="HWY-lN-Zcr" firstAttribute="leading" secondItem="SWQ-gF-OsA" secondAttribute="leading" constant="122" id="bWo-4L-vfK"/>
                             <constraint firstItem="aBh-vv-Rda" firstAttribute="trailing" secondItem="SWQ-gF-OsA" secondAttribute="trailing" id="bZC-ux-TQP"/>
+                            <constraint firstItem="8Qu-z6-fcP" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="dCN-Sh-0U2"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="HWY-lN-Zcr" secondAttribute="bottom" constant="178" id="fI5-lg-BDP"/>
                             <constraint firstItem="Sqd-pR-SxC" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="gtR-AC-8rd"/>
                             <constraint firstItem="SWQ-gF-OsA" firstAttribute="bottom" secondItem="oqp-Ul-K1h" secondAttribute="bottom" constant="65" id="hB1-Ig-crp"/>
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="nBp-ip-Zm5"/>
                             <constraint firstItem="xd8-b1-AWH" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="s0D-JA-eRj"/>
-                            <constraint firstItem="8as-g3-ehh" firstAttribute="top" secondItem="Cb6-3X-iW5" secondAttribute="bottom" id="sCs-DE-xco"/>
                             <constraint firstItem="biZ-Ga-ObL" firstAttribute="centerX" secondItem="SWQ-gF-OsA" secondAttribute="centerX" id="xE0-ri-2MU"/>
                             <constraint firstItem="25S-Fh-He3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="59e-JJ-QD6" secondAttribute="leading" id="xYm-C4-1J3"/>
                             <constraint firstItem="pK2-gL-RPe" firstAttribute="top" secondItem="txx-We-ra0" secondAttribute="bottom" constant="112" id="yke-22-aV8"/>
@@ -551,16 +606,22 @@
                         <outlet property="serverSubtitle" destination="ofu-3o-nVO" id="1ys-XW-soF"/>
                         <outlet property="serverTitle" destination="bLT-dX-l4V" id="Msm-2j-Cgi"/>
                         <outlet property="speedResultVerticalConstraint" destination="IyI-6o-VxN" id="nZH-sO-XVc"/>
+                        <outlet property="speedTestFinishedButtons" destination="8Qu-z6-fcP" id="zKj-bW-jpr"/>
                         <outlet property="speedTestValuesView" destination="aBh-vv-Rda" id="akI-vb-dko"/>
                         <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
                         <outlet property="startButton" destination="59e-JJ-QD6" id="mPW-sC-j7W"/>
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>
                         <outlet property="startButtonSKView" destination="25S-Fh-He3" id="NvH-wM-pDx"/>
                         <outlet property="transferImage" destination="xd8-b1-AWH" id="CnZ-70-OxR"/>
-                        <outlet property="transferSpeedLabel" destination="WMq-Bc-V0W" id="kfG-AR-Nyp"/>
+                        <outlet property="transferSpeedLabel" destination="WMq-Bc-V0W" id="bHg-hb-vth"/>
+                        <outlet property="transferSpeedUnitsLabel" destination="Lxi-rJ-Weo" id="8gR-8V-9BC"/>
                         <outlet property="uploadSpeedLabel" destination="sDF-uS-8xJ" id="PvU-re-frg"/>
+                        <outlet property="wifiImageHorizontalConstraint" destination="DG3-PL-DVk" id="Dfo-I2-Dn6"/>
                         <outlet property="wifiImageVerticalConstraint" destination="4CP-Ns-T6z" id="464-fP-Dhc"/>
+                        <outlet property="wifiSubtitle" destination="BZp-59-f6X" id="m6x-Hy-0S7"/>
                         <outlet property="wifiTitle" destination="fe1-qD-mzm" id="Giw-xP-Eqh"/>
+                        <outlet property="wifiTitleHorizontalConstraint" destination="bLZ-Q6-cKG" id="d7z-E7-fXz"/>
+                        <outlet property="wifiTitleVerticalConstraint" destination="EPc-wz-psW" id="WAQ-HR-9OZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbI-02-2vp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
