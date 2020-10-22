@@ -15,6 +15,9 @@ class SpeedTestViewController: UIViewController {
     private var speedTestDurationInSeconds = 1
     @IBOutlet weak var speedTestValuesView: UIView!
     @IBOutlet weak var transferImage: UIImageView!
+
+    // MARK: - Transfer Speed
+    @IBOutlet weak var transferSpeedView: UIView!
     @IBOutlet weak var transferSpeedLabel: UILabel!
     @IBOutlet weak var transferSpeedUnitsLabel: UILabel!
     @IBOutlet weak var downloadSpeedLabel: UILabel!
@@ -47,11 +50,9 @@ class SpeedTestViewController: UIViewController {
 
     // MARK: - Speed Result
     @IBOutlet weak var speedResultVerticalConstraint: NSLayoutConstraint!
-    private var speedResultVerticalDefault: CGFloat!
 
     // MARK: - Speed Test Complete Buttons
     @IBOutlet weak var speedTestFinishedButtons: UIView!
-
 
     private var viewsAnimationTimer: Timer?
     private var valuesAnimationTimer: Timer?
@@ -70,7 +71,6 @@ class SpeedTestViewController: UIViewController {
         startButtonPressedAnimations = getStartButtonAnimations()
         speedTestFinishedAnimations = getSpeedTestFinishedAnimations()
         backButtonPressedAnimations = getBackButtonPressedAnimations()
-        constraintSetup()
     }
 
     private func getStartButtonAnimations() -> [Animation] {
@@ -90,6 +90,8 @@ class SpeedTestViewController: UIViewController {
         animations.append(WifiImageDownAnimation(args: wifiArgs))
 
         animations.append(SpeedTestValuesShowAnimation(view: speedTestValuesView))
+
+        animations.append(TransferSpeedDownAnimation(verticalConstraint: speedResultVerticalConstraint))
         return animations
     }
 
@@ -114,6 +116,10 @@ class SpeedTestViewController: UIViewController {
 
         animations.append(SpeedTestCompleteShowButtonsAnimation(view: speedTestFinishedButtons))
         animations.append(SpeedTestValuesHideAnimation(view: speedTestValuesView))
+
+        animations.append(TransferSpeedUpAnimation(
+                            transferSpeedView: transferSpeedView,
+                            verticalConstraint: speedResultVerticalConstraint))
         return animations
     }
 
@@ -138,13 +144,12 @@ class SpeedTestViewController: UIViewController {
                             sKView: startButtonSKView,
                             glowView: startButtonGlowView,
                             button: startButton))
+
+        animations.append(TransferSpeedBackToStartAnimation(
+                            transferSpeedView: transferSpeedView,
+                            verticalConstraint: speedResultVerticalConstraint))
         return animations
 
-    }
-
-
-    private func constraintSetup() {
-        speedResultVerticalDefault = speedResultVerticalConstraint.constant
     }
 
     // MARK: - Start Button Pressed
@@ -340,7 +345,7 @@ class SpeedTestViewController: UIViewController {
         //wifiImageVerticalConstraint.constant = wifiImageVerticalDefault
        // serverImageVerticalConstraint.constant = serverImageVerticalDefault
         //serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
-        speedResultVerticalConstraint.constant = speedResultVerticalDefault
+//        speedResultVerticalConstraint.constant = speedResultVerticalDefault
     }
 
     private func resetSpeedTestValues() {

@@ -614,6 +614,7 @@
                         <outlet property="transferImage" destination="xd8-b1-AWH" id="CnZ-70-OxR"/>
                         <outlet property="transferSpeedLabel" destination="WMq-Bc-V0W" id="bHg-hb-vth"/>
                         <outlet property="transferSpeedUnitsLabel" destination="Lxi-rJ-Weo" id="8gR-8V-9BC"/>
+                        <outlet property="transferSpeedView" destination="txx-We-ra0" id="b9s-HZ-ijX"/>
                         <outlet property="uploadSpeedLabel" destination="sDF-uS-8xJ" id="PvU-re-frg"/>
                         <outlet property="wifiImageHorizontalConstraint" destination="DG3-PL-DVk" id="Dfo-I2-Dn6"/>
                         <outlet property="wifiImageVerticalConstraint" destination="4CP-Ns-T6z" id="464-fP-Dhc"/>
