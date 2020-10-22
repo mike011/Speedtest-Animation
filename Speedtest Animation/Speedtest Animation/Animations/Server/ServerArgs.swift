@@ -16,12 +16,14 @@ public struct ServerArgs {
 
     var imageHorizontalConstraint: NSLayoutConstraint
     var imageHorizontalDefault: CGFloat
+    var dots: UIImageView
 
     init(title: UILabel,
          subtitle: UILabel,
          button: UIButton,
          imageVerticalConstraint: NSLayoutConstraint,
-         imageHorizontalConstraint: NSLayoutConstraint) {
+         imageHorizontalConstraint: NSLayoutConstraint,
+         dots: UIImageView) {
         self.title = title
         self.subtitle = subtitle
         self.button = button
@@ -29,5 +31,6 @@ public struct ServerArgs {
         self.imageVerticalDefault = imageVerticalConstraint.constant
         self.imageHorizontalConstraint = imageHorizontalConstraint
         self.imageHorizontalDefault = imageHorizontalConstraint.constant
+        self.dots = dots
     }
 }

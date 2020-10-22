@@ -26,6 +26,8 @@ class SpeedTestViewController: UIViewController {
     @IBOutlet weak var serverButton: UIButton!
     @IBOutlet weak var serverImageVerticalConstraint: NSLayoutConstraint!
     @IBOutlet weak var serverImageHorizontalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var serverTitleVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var serverTitleHorizontalConstraint: NSLayoutConstraint!
 
     // MARK: - WIFI
     @IBOutlet weak var wifiTitle: UILabel!
@@ -34,7 +36,6 @@ class SpeedTestViewController: UIViewController {
     @IBOutlet weak var wifiImageHorizontalConstraint: NSLayoutConstraint!
     @IBOutlet weak var wifiTitleHorizontalConstraint: NSLayoutConstraint!
     @IBOutlet weak var wifiTitleVerticalConstraint: NSLayoutConstraint!
-    
 
     // MARK: - Start Button
     @IBOutlet weak var startButton: UIButton!
@@ -79,8 +80,9 @@ class SpeedTestViewController: UIViewController {
                                     subtitle: serverSubtitle,
                                     button: serverButton,
                                     imageVerticalConstraint: serverImageVerticalConstraint,
-                                    imageHorizontalConstraint: serverImageHorizontalConstraint)
-        //startButonPressedAnimations.append(ServerForwardAnimation(args: serverArgs))
+                                    imageHorizontalConstraint: serverImageHorizontalConstraint,
+                                    dots: dotsImage)
+        animations.append(ServerImageDownAnimation(args: serverArgs))
 
         animations.append(StartButtonHideBackgroundAnimation(sKView: startButtonSKView, glowView: startButtonGlowView))
 
@@ -92,19 +94,22 @@ class SpeedTestViewController: UIViewController {
 
     private func getSpeedTestFinishedAnimations()  -> [Animation] {
         var animations = [Animation]()
-        let serverArgs = ServerArgs(title: serverTitle,
-                                    subtitle: serverSubtitle,
-                                    button: serverButton,
-                                    imageVerticalConstraint: serverImageVerticalConstraint,
-                                    imageHorizontalConstraint: serverImageHorizontalConstraint)
-        //animations.append(ServerBackwardAnimation(args: serverArgs))
+        animations.append(ServerImageLeftAndTextDownAnimation(
+                            title: serverTitle,
+                            subtitle: serverSubtitle,
+                            imageVerticalConstraint: serverImageVerticalConstraint,
+                            imageHorizontalConstraint: serverImageHorizontalConstraint,
+                            titleVerticalConstraint: serverTitleVerticalConstraint,
+                            titleHorizontalConstraint: serverTitleHorizontalConstraint,
+                            dots: dotsImage))
 
         animations.append(WifiImageLeftAndTextDownAnimation(
                             title: wifiTitle,
                             subtitle: wifiSubtitle,
                             imageVerticalConstraint: wifiImageVerticalConstraint,
                             imageHorizontalConstraint: wifiImageHorizontalConstraint,
-                            textVerticalConstraint: wifiTitleVerticalConstraint))
+                            titleVerticalConstraint: wifiTitleVerticalConstraint,
+                            titleHorizontalConstraint: wifiTitleHorizontalConstraint))
 
 //        animations.append(WifiTextDownAnimation(title: wifiTitle, verticalConstraint: wifiTitleVerticalConstraint))
 
@@ -120,6 +125,13 @@ class SpeedTestViewController: UIViewController {
                             imageHorizontalConstraint: wifiImageHorizontalConstraint,
                             textVerticalConstraint: wifiTitleVerticalConstraint,
                             textHorizontalConstraint: wifiTitleHorizontalConstraint))
+        animations.append(ServerImageRightAndTextUpAnimation(
+                            subtitle: serverSubtitle,
+                            imageVerticalConstraint: serverImageVerticalConstraint,
+                            imageHorizontalConstraint: serverImageHorizontalConstraint,
+                            textVerticalConstraint: serverTitleVerticalConstraint,
+                            textHorizontalConstraint: serverTitleHorizontalConstraint,
+                            button: serverButton))
         animations.append(SpeedTestCompleteHideButtonsAnimation(view: speedTestFinishedButtons))
 
         animations.append(StartButtonShowBackgroundAnimation(
@@ -251,8 +263,7 @@ class SpeedTestViewController: UIViewController {
     }
 
     private func adjustConstraints() {
-        wifiTitleVerticalConstraint.constant = 150
-        wifiTitleHorizontalConstraint.constant = 68
+       
     }
 
     private func animateResultViewShown() {
@@ -295,7 +306,7 @@ class SpeedTestViewController: UIViewController {
     private func reset() {
         resetStartViews()
         resetWifiViews()
-        resetServerViews()
+//        resetServerViews()
         resetDotsImages()
         resetConstraints()
         resetSpeedTestValues()
@@ -314,11 +325,11 @@ class SpeedTestViewController: UIViewController {
 
     }
 
-    private func resetServerViews() {
-        serverTitle.alpha = 1
-        serverSubtitle.alpha = 1
-        serverButton.alpha = 1
-    }
+//    private func resetServerViews() {
+//        serverTitle.alpha = 1
+//        serverSubtitle.alpha = 1
+//        serverButton.alpha = 1
+//    }
 
     private func resetDotsImages() {
         dotsImage.isHidden = true
