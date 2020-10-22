@@ -23,6 +23,9 @@ class SpeedTestViewController: UIViewController {
     @IBOutlet weak var downloadSpeedLabel: UILabel!
     @IBOutlet weak var uploadSpeedLabel: UILabel!
 
+    // MARK: - Transfer Result View
+    @IBOutlet weak var transferResultsView: UIView!
+
     // MARK: - Server
     @IBOutlet weak var serverTitle: UILabel!
     @IBOutlet weak var serverSubtitle: UILabel!
@@ -120,6 +123,8 @@ class SpeedTestViewController: UIViewController {
         animations.append(TransferSpeedUpAnimation(
                             transferSpeedView: transferSpeedView,
                             verticalConstraint: speedResultVerticalConstraint))
+
+        animations.append(TransferResultsShowAnimation(view: transferResultsView))
         return animations
     }
 
@@ -148,6 +153,8 @@ class SpeedTestViewController: UIViewController {
         animations.append(TransferSpeedBackToStartAnimation(
                             transferSpeedView: transferSpeedView,
                             verticalConstraint: speedResultVerticalConstraint))
+
+        animations.append(TransferResultsHideAnimation(view: transferResultsView))
         return animations
 
     }
@@ -156,75 +163,16 @@ class SpeedTestViewController: UIViewController {
 
     @IBAction func startButtonPressed(_ sender: Any) {
         showDownloadAnimation()
-        //hideStartButtonTitle()
-
-//        startStartButtonAnimation()
-        startViewsAnimationTimer()
-//        showDotsImages()
-//        showSpeedTestValues()
-//        showDownloadImage()
+        startAnimations()
     }
 
-    private func hideStartButtonTitle() {
-        startButton.isHidden = true
-    }
-
-    private func getTextures() -> [SKTexture] {
-        var result = [SKTexture]()
-        for i in 1...7 {
-            result.append(SKTexture(imageNamed: "\(i).png"))
-        }
-        return result
-    }
-
-    private func startViewsAnimationTimer() {
+    private func startAnimations() {
         for animation in startButtonPressedAnimations {
             animation.start()
         }
-//        viewsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
-//            self.speedTestStartAnimation()
-//            if self.startButtonSKView.alpha <= 0 {
-//                timer.invalidate()
-//            }
-//        }
-//
 //        valuesAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { timer in
 //            self.animateSpeedValuesViews()
 //        }
-    }
-
-    fileprivate func speedTestStartAnimation() {
-        animateStartViews()
-        animateDotsImages()
-        animateSpeedResultViews()
-        animateSpeedTestValues()
-    }
-
-    private func showDotsImages() {
-        dotsImage.isHidden = false
-        dotsImage.alpha = 0
-    }
-
-    private func showSpeedTestValues() {
-        speedTestValuesView.isHidden = false
-        speedTestValuesView.alpha = 0
-    }
-
-    private func showDownloadImage() {
-        transferImage.isHidden = false
-    }
-
-    private func animateStartViews() {
-//        startButtonSKView.alpha -= 0.1
-//        startButtonGlowView.alpha -= 0.1
-    }
-
-    private func animateDotsImages() {
-        dotsImage.alpha += 0.1
-    }
-
-    private func animateSpeedResultViews() {
-        speedResultVerticalConstraint.constant -= 15
     }
 
     private func animateSpeedValuesViews() {
@@ -236,11 +184,9 @@ class SpeedTestViewController: UIViewController {
         return String(format: "%.2f", value);
     }
 
-    private func animateSpeedTestValues() {
-        speedTestValuesView.alpha += 0.2
-    }
-    
     private func showDownloadAnimation() {
+        self.transferImage.isHidden = false
+        self.transferImage.image = UIImage(named: "download")!
         let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
         downloadAnimation.display()
         downloadAnimationCompleted(downloadAnimation)
@@ -248,7 +194,6 @@ class SpeedTestViewController: UIViewController {
 
     private func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
-            self.downloadSpeedLabel.text = self.transferSpeedLabel.text
             self.transferImage.image = UIImage(named: "upload")!
             downloadAnimation.remove()
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
@@ -258,105 +203,21 @@ class SpeedTestViewController: UIViewController {
     }
 
     private func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
-        adjustConstraints()
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             uploadAnimation.remove()
-            //self.uploadSpeedLabel.text = self.transferSpeedLabel.text
-            //self.valuesAnimationTimer?.invalidate()
-            self.animateResultViewShown()
+            self.testFinishedAnimations()
+            self.transferImage.isHidden = true
         }
-    }
-
-    private func adjustConstraints() {
-       
-    }
-
-    private func animateResultViewShown() {
-        for animation in speedTestFinishedAnimations {
-            animation.start()
-        }
-//        viewsAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { timer in
-//            self.speedTestEndAnimation()
-//            if self.server.isFinished() {
-//                timer.invalidate()
-//            }
-//        }
-    }
-
-    fileprivate func speedTestEndAnimation() {
-        //server.animationAtEndOfSpeedTest()
-        //wifi.animationAtEndOfSpeedTest()
-        //animateWifiViews()
-        animateDotsImages()
-        animateSpeedResultViews()
-        animateSpeedTestValues()
-        transferImage.isHidden = true
-        transferSpeedLabel.isHidden = true
-        transferSpeedUnitsLabel.isHidden = true
-        speedTestValuesView.isHidden = true
     }
 
     private func getDuration() -> DispatchTime {
         return .now() + .milliseconds(speedTestDurationInSeconds * 1000)
     }
 
-    private func showSummaryViewController() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let summaryViewController = storyBoard.instantiateViewController(withIdentifier: "summaryViewController")
-        present(summaryViewController, animated: true, completion: reset)
-    }
-
-    // MARK: - Clean Up
-
-    private func reset() {
-        resetStartViews()
-        resetWifiViews()
-//        resetServerViews()
-        resetDotsImages()
-        resetConstraints()
-        resetSpeedTestValues()
-        resetTransferImage()
-        valuesAnimationTimer?.invalidate()
-    }
-
-    private func resetStartViews() {
-        startButton.isHidden = false
-        startButtonSKView.alpha = 1
-        startButtonGlowView.alpha = 1
-    }
-
-    private func resetWifiViews() {
-        wifiTitle.alpha = 1
-
-    }
-
-//    private func resetServerViews() {
-//        serverTitle.alpha = 1
-//        serverSubtitle.alpha = 1
-//        serverButton.alpha = 1
-//    }
-
-    private func resetDotsImages() {
-        dotsImage.isHidden = true
-        dotsImage.alpha = 1
-    }
-
-    private func resetConstraints() {
-        //wifiImageVerticalConstraint.constant = wifiImageVerticalDefault
-       // serverImageVerticalConstraint.constant = serverImageVerticalDefault
-        //serverImageHorizontalConstraint.constant = serverImageHorizontalDefault
-//        speedResultVerticalConstraint.constant = speedResultVerticalDefault
-    }
-
-    private func resetSpeedTestValues() {
-        speedTestValuesView.isHidden = true
-        speedTestValuesView.alpha = 1
-        transferSpeedLabel.text = "-"
-    }
-
-    private func resetTransferImage() {
-        transferImage.isHidden = true
-        transferImage.image = UIImage(named: "download")!
+    private func testFinishedAnimations() {
+        for animation in speedTestFinishedAnimations {
+            animation.start()
+        }
     }
 
     // MARK: - Back Button Pressed

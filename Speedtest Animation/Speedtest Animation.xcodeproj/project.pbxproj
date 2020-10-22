@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4C39F489253B292400708FD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39F488253B292400708FD7 /* AppDelegate.swift */; };
 		4C39F48B253B292400708FD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39F48A253B292400708FD7 /* SceneDelegate.swift */; };
-		4C39F48D253B292400708FD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39F48C253B292400708FD7 /* ViewController.swift */; };
 		4C39F490253B292400708FD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C39F48E253B292400708FD7 /* Main.storyboard */; };
 		4C39F492253B292400708FD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C39F491253B292400708FD7 /* Assets.xcassets */; };
 		4C39F495253B292400708FD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C39F493253B292400708FD7 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,8 @@
 		4C80845425411FE8009C5AE4 /* TransferSpeedDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845325411FE8009C5AE4 /* TransferSpeedDownAnimation.swift */; };
 		4C80845825412275009C5AE4 /* TransferSpeedUpAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845725412275009C5AE4 /* TransferSpeedUpAnimation.swift */; };
 		4C80845B2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845A2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift */; };
+		4C80846225412C36009C5AE4 /* TransferResultsShowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */; };
+		4C80846625412C41009C5AE4 /* TransferResultsHideAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */; };
 		4CD8C831253E2E29008FB158 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82A253E2E28008FB158 /* 1.png */; };
 		4CD8C832253E2E29008FB158 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82B253E2E28008FB158 /* 3.png */; };
 		4CD8C833253E2E29008FB158 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82C253E2E28008FB158 /* 2.png */; };
@@ -43,7 +44,6 @@
 		4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B66253C952100E6631E /* DownloadAnimation.swift */; };
 		4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */; };
 		4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B6C253C979800E6631E /* UploadAnimation.swift */; };
-		4CE72B74253CC81700E6631E /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B73253CC81700E6631E /* SummaryViewController.swift */; };
 		4CE72B78253CCEED00E6631E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72B77253CCEED00E6631E /* UIView+Extension.swift */; };
 		4CE72B8F253E224100E6631E /* StartButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4CE72B8E253E224100E6631E /* StartButton.sks */; };
 /* End PBXBuildFile section */
@@ -52,7 +52,6 @@
 		4C39F485253B292400708FD7 /* Speedtest Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Speedtest Animation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C39F488253B292400708FD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C39F48A253B292400708FD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C39F48C253B292400708FD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C39F48F253B292400708FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C39F491253B292400708FD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C39F494253B292400708FD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +64,8 @@
 		4C80845325411FE8009C5AE4 /* TransferSpeedDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedDownAnimation.swift; sourceTree = "<group>"; };
 		4C80845725412275009C5AE4 /* TransferSpeedUpAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedUpAnimation.swift; sourceTree = "<group>"; };
 		4C80845A2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedBackToStartAnimation.swift; sourceTree = "<group>"; };
+		4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResultsShowAnimation.swift; sourceTree = "<group>"; };
+		4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResultsHideAnimation.swift; sourceTree = "<group>"; };
 		4CD8C82A253E2E28008FB158 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		4CD8C82B253E2E28008FB158 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		4CD8C82C253E2E28008FB158 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		4CE72B66253C952100E6631E /* DownloadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAnimation.swift; sourceTree = "<group>"; };
 		4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		4CE72B6C253C979800E6631E /* UploadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAnimation.swift; sourceTree = "<group>"; };
-		4CE72B73253CC81700E6631E /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4CE72B77253CCEED00E6631E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		4CE72B8E253E224100E6631E /* StartButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartButton.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,21 +122,14 @@
 		4C39F487253B292400708FD7 /* Speedtest Animation */ = {
 			isa = PBXGroup;
 			children = (
-				4CE72B8E253E224100E6631E /* StartButton.sks */,
 				4CD8C84A25408A85008FB158 /* Animations */,
-				4CE72B7E253E09FC00E6631E /* img */,
 				4C39F488253B292400708FD7 /* AppDelegate.swift */,
 				4C39F48A253B292400708FD7 /* SceneDelegate.swift */,
-				4C39F48C253B292400708FD7 /* ViewController.swift */,
 				4C39F48E253B292400708FD7 /* Main.storyboard */,
 				4C39F491253B292400708FD7 /* Assets.xcassets */,
 				4C39F493253B292400708FD7 /* LaunchScreen.storyboard */,
 				4C39F496253B292400708FD7 /* Info.plist */,
 				4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */,
-				4CE72B66253C952100E6631E /* DownloadAnimation.swift */,
-				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
-				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
-				4CE72B73253CC81700E6631E /* SummaryViewController.swift */,
 				4CE72B77253CCEED00E6631E /* UIView+Extension.swift */,
 			);
 			path = "Speedtest Animation";
@@ -161,16 +154,29 @@
 			path = TransferSpeed;
 			sourceTree = "<group>";
 		};
+		4C80845F25412BF6009C5AE4 /* TransferResults */ = {
+			isa = PBXGroup;
+			children = (
+				4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */,
+				4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */,
+			);
+			path = TransferResults;
+			sourceTree = "<group>";
+		};
 		4CD8C84A25408A85008FB158 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				4C80845225411FDA009C5AE4 /* TransferSpeed */,
-				4C80844925411D76009C5AE4 /* SpeedTestValues */,
-				4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */,
-				4CD8C8612540A30C008FB158 /* StartButton */,
-				4CD8C85625409D22008FB158 /* Wifi */,
+				4CE72B66253C952100E6631E /* DownloadAnimation.swift */,
 				4CD8C84F25409C82008FB158 /* Server */,
+				4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */,
+				4C80844925411D76009C5AE4 /* SpeedTestValues */,
+				4CD8C8612540A30C008FB158 /* StartButton */,
 				4CD8C84C254093E9008FB158 /* TimerAnimation.swift */,
+				4C80845F25412BF6009C5AE4 /* TransferResults */,
+				4C80845225411FDA009C5AE4 /* TransferSpeed */,
+				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
+				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
+				4CD8C85625409D22008FB158 /* Wifi */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 		4CD8C8612540A30C008FB158 /* StartButton */ = {
 			isa = PBXGroup;
 			children = (
+				4CE72B7E253E09FC00E6631E /* img */,
+				4CE72B8E253E224100E6631E /* StartButton.sks */,
 				4CD8C86B2540A5A0008FB158 /* StartButtonAnimation.swift */,
 				4CD8C8622540A318008FB158 /* StartButtonHideBackgroundAnimation.swift */,
 				4CD8C88F2540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift */,
@@ -311,12 +319,10 @@
 				4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */,
 				4C8084432540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift in Sources */,
 				4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */,
-				4C39F48D253B292400708FD7 /* ViewController.swift in Sources */,
 				4CD8C86C2540A5A0008FB158 /* StartButtonAnimation.swift in Sources */,
 				4CD8C87A2540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift in Sources */,
 				4C80844B25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift in Sources */,
 				4CD8C85225409C96008FB158 /* ServerImageDownAnimation.swift in Sources */,
-				4CE72B74253CC81700E6631E /* SummaryViewController.swift in Sources */,
 				4CD8C85E25409F25008FB158 /* WifiArgs.swift in Sources */,
 				4C80845B2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift in Sources */,
 				4CD8C8632540A318008FB158 /* StartButtonHideBackgroundAnimation.swift in Sources */,
@@ -326,6 +332,7 @@
 				4CD8C8902540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift in Sources */,
 				4CD8C847254079D8008FB158 /* WifiImageDownAnimation.swift in Sources */,
 				4CD8C8402540766A008FB158 /* ServerArgs.swift in Sources */,
+				4C80846225412C36009C5AE4 /* TransferResultsShowAnimation.swift in Sources */,
 				4CD8C8702540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift in Sources */,
 				4C39F489253B292400708FD7 /* AppDelegate.swift in Sources */,
 				4C39F48B253B292400708FD7 /* SceneDelegate.swift in Sources */,
@@ -333,6 +340,7 @@
 				4C80845825412275009C5AE4 /* TransferSpeedUpAnimation.swift in Sources */,
 				4CD8C88C2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift in Sources */,
 				4C8084472541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift in Sources */,
+				4C80846625412C41009C5AE4 /* TransferResultsHideAnimation.swift in Sources */,
 				4CD8C84D254093E9008FB158 /* TimerAnimation.swift in Sources */,
 				4C80845425411FE8009C5AE4 /* TransferSpeedDownAnimation.swift in Sources */,
 				4CD8C8882540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift in Sources */,
