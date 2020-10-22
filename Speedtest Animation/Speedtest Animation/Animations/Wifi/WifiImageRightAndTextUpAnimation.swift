@@ -48,7 +48,7 @@ class WifiImageRightAndTextUpAnimation: TimerAnimation {
         return imageVerticalConstraint.constant >= imageVerticalStartValue
     }
 
-    func completion() {
+    func onCompletion() {
         imageVerticalConstraint.constant = imageVerticalStartValue
         imageHorizontalConstraint.constant = imageHorizontalStartValue
     }

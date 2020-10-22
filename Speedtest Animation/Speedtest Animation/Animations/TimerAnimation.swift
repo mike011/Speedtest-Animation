@@ -7,16 +7,12 @@
 
 import UIKit
 
-public protocol Animation: class {
-    func start()
-}
-
 public protocol TimerAnimation: Animation {
     var timer: Timer! {get set}
     func animate()
     func isFinished() -> Bool
     func before()
-    func completion()
+    func onCompletion()
 }
 
 extension TimerAnimation {
@@ -28,15 +24,19 @@ extension TimerAnimation {
             }
             self.animate()
             if self.isFinished() {
-                self.completion()
-                timer.invalidate()
+                self.finish()
             }
         }
+    }
+
+    public func finish() {
+        onCompletion()
+        timer.invalidate()
     }
 
     public func before() {
     }
     
-    public func completion() {
+    public func onCompletion() {
     }
 }

@@ -39,4 +39,8 @@ public class StartButtonAnimation: Animation {
         }
         return result
     }
+
+    public func finish() {
+        scene.removeAllChildren()
+    }
 }

@@ -493,16 +493,16 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDF-uS-8xJ" userLabel="Upload Speed">
-                                        <rect key="frame" x="223" y="42.5" width="57" height="27"/>
+                                        <rect key="frame" x="220" y="42.5" width="60" height="27"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="57" id="3HR-9U-rZm"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="3HR-9U-rZm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mbps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FO8-Jc-4d6" userLabel="Upload Units">
-                                        <rect key="frame" x="230" y="77" width="43" height="21"/>
+                                        <rect key="frame" x="228.5" y="77" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>

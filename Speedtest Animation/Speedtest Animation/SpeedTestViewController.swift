@@ -59,9 +59,12 @@ class SpeedTestViewController: UIViewController {
 
     private var viewsAnimationTimer: Timer?
     private var valuesAnimationTimer: Timer?
-    private var startButtonPressedAnimations: [Animation]!
-    private var speedTestFinishedAnimations: [Animation]!
-    private var backButtonPressedAnimations: [Animation]!
+    private var startButtonPressedAnimations: AnimationContainer!
+    private var speedTestFinishedAnimations: AnimationContainer!
+    private var backButtonPressedAnimations: AnimationContainer!
+    private var downloadTestStartedAnimations: AnimationContainer!
+    private var uploadTestStartedAnimations: AnimationContainer!
+    private var connection: Connection = NetworkConnection()
 
     // MARK: - Setup
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +77,11 @@ class SpeedTestViewController: UIViewController {
         startButtonPressedAnimations = getStartButtonAnimations()
         speedTestFinishedAnimations = getSpeedTestFinishedAnimations()
         backButtonPressedAnimations = getBackButtonPressedAnimations()
+        downloadTestStartedAnimations = getDownloadTestStartedAnimations()
+        uploadTestStartedAnimations = getUploadTestStartedAnimations()
     }
 
-    private func getStartButtonAnimations() -> [Animation] {
+    private func getStartButtonAnimations() -> AnimationContainer {
         var animations = [Animation]()
         animations.append(StartButtonAnimation(view: startButtonSKView, button: startButton))
         let serverArgs = ServerArgs(title: serverTitle,
@@ -95,10 +100,10 @@ class SpeedTestViewController: UIViewController {
         animations.append(SpeedTestValuesShowAnimation(view: speedTestValuesView))
 
         animations.append(TransferSpeedDownAnimation(verticalConstraint: speedResultVerticalConstraint))
-        return animations
+        return AnimationContainer(animations: animations)
     }
 
-    private func getSpeedTestFinishedAnimations()  -> [Animation] {
+    private func getSpeedTestFinishedAnimations()  -> AnimationContainer{
         var animations = [Animation]()
         animations.append(ServerImageLeftAndTextDownAnimation(
                             title: serverTitle,
@@ -125,10 +130,10 @@ class SpeedTestViewController: UIViewController {
                             verticalConstraint: speedResultVerticalConstraint))
 
         animations.append(TransferResultsShowAnimation(view: transferResultsView))
-        return animations
+        return AnimationContainer(animations: animations)
     }
 
-    private func getBackButtonPressedAnimations()  -> [Animation] {
+    private func getBackButtonPressedAnimations() -> AnimationContainer {
         var animations = [Animation]()
         animations.append(WifiImageRightAndTextUpAnimation(
                             subtitle: wifiSubtitle,
@@ -155,36 +160,37 @@ class SpeedTestViewController: UIViewController {
                             verticalConstraint: speedResultVerticalConstraint))
 
         animations.append(TransferResultsHideAnimation(view: transferResultsView))
-        return animations
+        animations.append(ResetTransferSpeedsAnimation(upload: uploadSpeedLabel, download: downloadSpeedLabel))
+        return AnimationContainer(animations: animations)
+    }
 
+    private func getDownloadTestStartedAnimations() -> AnimationContainer {
+        var animations = [Animation]()
+        animations.append(DownloadTransferSpeedAnimation(
+                            networkConnection: connection,
+                            currentLabel: transferSpeedLabel,
+                            finalLabel: downloadSpeedLabel))
+        return AnimationContainer(animations: animations)
+    }
+
+    private func getUploadTestStartedAnimations() -> AnimationContainer {
+        var animations = [Animation]()
+        animations.append(UploadTransferSpeedAnimation(
+                            networkConnection: connection,
+                            currentLabel: transferSpeedLabel,
+                            finalLabel: uploadSpeedLabel))
+        return AnimationContainer(animations: animations)
     }
 
     // MARK: - Start Button Pressed
 
     @IBAction func startButtonPressed(_ sender: Any) {
         showDownloadAnimation()
-        startAnimations()
-    }
-
-    private func startAnimations() {
-        for animation in startButtonPressedAnimations {
-            animation.start()
-        }
-//        valuesAnimationTimer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { timer in
-//            self.animateSpeedValuesViews()
-//        }
-    }
-
-    private func animateSpeedValuesViews() {
-        transferSpeedLabel.text = "\(getCurrentSpeed())"
-    }
-
-    private func getCurrentSpeed() -> String {
-        let value = Float.random(in: 90..<250)
-        return String(format: "%.2f", value);
+        startButtonPressedAnimations.start()
     }
 
     private func showDownloadAnimation() {
+        downloadTestStartedAnimations.start()
         self.transferImage.isHidden = false
         self.transferImage.image = UIImage(named: "download")!
         let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
@@ -199,14 +205,17 @@ class SpeedTestViewController: UIViewController {
             let uploadAnimation = UploadAnimation(forView: self.speedTestView)
             uploadAnimation.display()
             self.uploadAnimationCompleted(uploadAnimation)
+            self.downloadTestStartedAnimations.finish()
         }
     }
 
     private func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
+        uploadTestStartedAnimations.start()
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
             uploadAnimation.remove()
-            self.testFinishedAnimations()
+            self.speedTestFinishedAnimations.start()
             self.transferImage.isHidden = true
+            self.uploadTestStartedAnimations.finish()
         }
     }
 
@@ -214,17 +223,9 @@ class SpeedTestViewController: UIViewController {
         return .now() + .milliseconds(speedTestDurationInSeconds * 1000)
     }
 
-    private func testFinishedAnimations() {
-        for animation in speedTestFinishedAnimations {
-            animation.start()
-        }
-    }
-
     // MARK: - Back Button Pressed
     @IBAction func backButtonPressed(_ sender: Any) {
-        for animation in backButtonPressedAnimations {
-            animation.start()
-        }
+        backButtonPressedAnimations.start()
     }
 }
 

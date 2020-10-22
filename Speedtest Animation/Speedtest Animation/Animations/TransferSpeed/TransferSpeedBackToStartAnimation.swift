@@ -30,7 +30,7 @@ class TransferSpeedBackToStartAnimation: TimerAnimation {
         return verticalConstraint.constant <= defaultValue
     }
 
-    func completion() {
+    func onCompletion() {
         verticalConstraint.constant = defaultValue
         transferSpeedView.isHidden = false
     }

@@ -29,7 +29,7 @@ class SpeedTestValuesHideAnimation: TimerAnimation {
         return view.alpha <= 0
     }
 
-    func completion() {
+    func onCompletion() {
         view.isHidden = true
     }
 }

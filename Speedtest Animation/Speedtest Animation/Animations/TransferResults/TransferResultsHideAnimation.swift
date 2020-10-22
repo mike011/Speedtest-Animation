@@ -29,7 +29,7 @@ class TransferResultsHideAnimation: TimerAnimation {
         return view.alpha <= 0.0
     }
 
-    public func completion() {
+    public func onCompletion() {
         view.isHidden = true
     }
 }

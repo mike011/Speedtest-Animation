@@ -50,7 +50,7 @@ class ServerImageRightAndTextUpAnimation: TimerAnimation {
         return subtitle.alpha >= 1
     }
 
-    func completion() {
+    func onCompletion() {
         imageVerticalConstraint.constant = imageVerticalStartValue
         imageHorizontalConstraint.constant = imageHorizontalStartValue
         button.alpha = 1.0

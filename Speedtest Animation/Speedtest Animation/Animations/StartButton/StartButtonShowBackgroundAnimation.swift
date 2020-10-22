@@ -33,7 +33,7 @@ public class StartButtonShowBackgroundAnimation: TimerAnimation {
         return glowView.alpha >= 1.0
     }
 
-    public func completion() {
+    public func onCompletion() {
         button.isHidden = false
     }
 }
