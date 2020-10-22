@@ -13,7 +13,6 @@ class SpeedTestViewController: UIViewController {
     // MARK: - Speed Test
     @IBOutlet weak var speedTestView: UIView!
     private var speedTestDurationInSeconds = 1
-    @IBOutlet weak var speedTestValuesView: UIView!
     @IBOutlet weak var transferImage: UIImageView!
 
     // MARK: - Transfer Speed
@@ -23,8 +22,16 @@ class SpeedTestViewController: UIViewController {
     @IBOutlet weak var downloadSpeedLabel: UILabel!
     @IBOutlet weak var uploadSpeedLabel: UILabel!
 
-    // MARK: - Transfer Result View
-    @IBOutlet weak var transferResultsView: UIView!
+    // MARK: - Metrics
+    @IBOutlet weak var metricsLiveView: UIView!
+    @IBOutlet weak var livePingLabel: UILabel!
+    @IBOutlet weak var liveJitterLabel: UILabel!
+    @IBOutlet weak var liveLossLabel: UILabel!
+
+    @IBOutlet weak var metricsResultsView: UIView!
+    @IBOutlet weak var resultPingLabel: UILabel!
+    @IBOutlet weak var resultJitterLabel: UILabel!
+    @IBOutlet weak var resultLossLabel: UILabel!
 
     // MARK: - Server
     @IBOutlet weak var serverTitle: UILabel!
@@ -97,7 +104,7 @@ class SpeedTestViewController: UIViewController {
         let wifiArgs = WifiArgs(title: wifiTitle, imageVerticalConstraint: wifiImageVerticalConstraint)
         animations.append(WifiImageDownAnimation(args: wifiArgs))
 
-        animations.append(SpeedTestValuesShowAnimation(view: speedTestValuesView))
+        animations.append(MetricsLiveShowAnimation(view: metricsLiveView))
 
         animations.append(TransferSpeedDownAnimation(verticalConstraint: speedResultVerticalConstraint))
         return AnimationContainer(animations: animations)
@@ -123,13 +130,13 @@ class SpeedTestViewController: UIViewController {
                             titleHorizontalConstraint: wifiTitleHorizontalConstraint))
 
         animations.append(SpeedTestCompleteShowButtonsAnimation(view: speedTestFinishedButtons))
-        animations.append(SpeedTestValuesHideAnimation(view: speedTestValuesView))
+        animations.append(MetricsLiveHideAnimation(view: metricsLiveView))
 
         animations.append(TransferSpeedUpAnimation(
                             transferSpeedView: transferSpeedView,
                             verticalConstraint: speedResultVerticalConstraint))
 
-        animations.append(TransferResultsShowAnimation(view: transferResultsView))
+        animations.append(MetricsResultsShowAnimation(view: metricsResultsView))
         return AnimationContainer(animations: animations)
     }
 
@@ -159,7 +166,7 @@ class SpeedTestViewController: UIViewController {
                             transferSpeedView: transferSpeedView,
                             verticalConstraint: speedResultVerticalConstraint))
 
-        animations.append(TransferResultsHideAnimation(view: transferResultsView))
+        animations.append(MetricsResultsHideAnimation(view: metricsResultsView))
         animations.append(ResetTransferSpeedsAnimation(upload: uploadSpeedLabel, download: downloadSpeedLabel))
         return AnimationContainer(animations: animations)
     }
@@ -170,6 +177,11 @@ class SpeedTestViewController: UIViewController {
                             networkConnection: connection,
                             currentLabel: transferSpeedLabel,
                             finalLabel: downloadSpeedLabel))
+
+        let live = Metrics(ping: livePingLabel, jitter: liveJitterLabel, loss: liveLossLabel)
+        let result = Metrics(ping: resultPingLabel, jitter: resultJitterLabel, loss: resultLossLabel)
+        animations.append(MetricsLiveAnimation(connection: connection, liveMetrics: live, resultMetrics: result))
+
         return AnimationContainer(animations: animations)
     }
 

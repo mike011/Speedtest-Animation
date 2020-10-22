@@ -1,5 +1,5 @@
 //
-//  SpeedTestValuesShowAnimation.swift
+//  MetricsShowAnimation.swift
 //  Speedtest Animation
 //
 //  Created by Michael Charland on 2020-10-21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpeedTestValuesShowAnimation: TimerAnimation {
+class MetricsLiveShowAnimation: TimerAnimation {
 
     var timer: Timer!
 

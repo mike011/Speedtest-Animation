@@ -74,33 +74,36 @@
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="xd8-b1-AWH" userLabel="Current Transfer Image">
                                 <rect key="frame" x="193.5" y="279" width="27" height="27"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBh-vv-Rda" userLabel="Speed Test Values View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBh-vv-Rda" userLabel="Metrics Live View">
                                 <rect key="frame" x="0.0" y="79" width="414" height="21"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AF-VX-QjN" userLabel="Ping View">
-                                        <rect key="frame" x="4" y="0.0" width="81" height="21"/>
+                                        <rect key="frame" x="4" y="0.0" width="110" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-LE-vFm" userLabel="Ping Value">
-                                                <rect key="frame" x="45" y="0.0" width="11" height="21"/>
+                                                <rect key="frame" x="50" y="0.0" width="35" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="4jA-Su-gQT"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="R5N-5K-gO9" userLabel="Ping Dot">
-                                                <rect key="frame" x="-1" y="5.5" width="7" height="10"/>
+                                                <rect key="frame" x="4" y="5.5" width="7" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="7" id="MiS-Lw-aUf"/>
                                                     <constraint firstAttribute="height" constant="10" id="r0d-yF-dGG"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72y-db-coW" userLabel="Ping Title">
-                                                <rect key="frame" x="8" y="0.0" width="32" height="21"/>
+                                                <rect key="frame" x="13" y="0.0" width="32" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-Mv-Ei9" userLabel="Ping Units">
-                                                <rect key="frame" x="58" y="0.0" width="23" height="21"/>
+                                                <rect key="frame" x="87" y="0.0" width="23" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -108,7 +111,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="81" id="1c7-bG-Ksk"/>
+                                            <constraint firstAttribute="width" constant="110" id="1c7-bG-Ksk"/>
                                             <constraint firstAttribute="bottom" secondItem="O6g-Mv-Ei9" secondAttribute="bottom" id="3Rs-RB-rSr"/>
                                             <constraint firstItem="O6g-Mv-Ei9" firstAttribute="leading" secondItem="qGj-LE-vFm" secondAttribute="trailing" constant="2" id="3jU-D3-Zrg"/>
                                             <constraint firstItem="O6g-Mv-Ei9" firstAttribute="top" secondItem="0AF-VX-QjN" secondAttribute="top" id="82s-TQ-AFM"/>
@@ -171,7 +174,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8O-ph-KPm" userLabel="Loss View">
-                                        <rect key="frame" x="320" y="0.0" width="90" height="21"/>
+                                        <rect key="frame" x="316" y="0.0" width="90" height="21"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUr-r2-qMu" userLabel="Loss Value">
                                                 <rect key="frame" x="61" y="0.0" width="11" height="21"/>
@@ -222,34 +225,34 @@
                                     <constraint firstItem="0AF-VX-QjN" firstAttribute="leading" secondItem="aBh-vv-Rda" secondAttribute="leading" constant="4" id="1dI-ab-92r"/>
                                     <constraint firstItem="0AF-VX-QjN" firstAttribute="top" secondItem="aBh-vv-Rda" secondAttribute="top" id="44h-H2-db3"/>
                                     <constraint firstItem="zAN-hg-hiB" firstAttribute="centerX" secondItem="aBh-vv-Rda" secondAttribute="centerX" id="B8l-GJ-efl"/>
-                                    <constraint firstAttribute="trailing" secondItem="j8O-ph-KPm" secondAttribute="trailing" constant="4" id="QaO-IB-h4q"/>
+                                    <constraint firstAttribute="trailing" secondItem="j8O-ph-KPm" secondAttribute="trailing" constant="8" id="QaO-IB-h4q"/>
                                     <constraint firstItem="j8O-ph-KPm" firstAttribute="top" secondItem="aBh-vv-Rda" secondAttribute="top" id="hDh-JB-RU0"/>
                                     <constraint firstItem="zAN-hg-hiB" firstAttribute="top" secondItem="aBh-vv-Rda" secondAttribute="top" id="nbh-Xj-3WR"/>
                                     <constraint firstAttribute="bottom" secondItem="0AF-VX-QjN" secondAttribute="bottom" id="oqG-aR-Hyd"/>
                                     <constraint firstAttribute="bottom" secondItem="j8O-ph-KPm" secondAttribute="bottom" id="qhB-pN-sbg"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-nn-XZV" userLabel="Transfer Results View">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-nn-XZV" userLabel="Metrics Results View">
                                 <rect key="frame" x="0.0" y="420" width="414" height="83"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9H-SR-QTz" userLabel="Ping View">
-                                        <rect key="frame" x="50" y="0.0" width="42" height="83"/>
+                                        <rect key="frame" x="50" y="0.0" width="60" height="83"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-hM-t7M" userLabel="Ping Title">
-                                                <rect key="frame" x="10" y="0.0" width="32" height="20"/>
+                                                <rect key="frame" x="23" y="0.0" width="32" height="20"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="EYh-mT-Oo3">
-                                                <rect key="frame" x="1" y="5" width="7" height="10"/>
+                                                <rect key="frame" x="14" y="5" width="7" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="pce-Ns-Uik"/>
                                                     <constraint firstAttribute="width" constant="7" id="wsa-q1-v3T"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-aw-Bet" userLabel="Ping Speed">
-                                                <rect key="frame" x="0.0" y="28" width="42" height="29"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-aw-Bet" userLabel="Ping Value">
+                                                <rect key="frame" x="0.0" y="28" width="60" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="7YL-5L-WSj"/>
                                                 </constraints>
@@ -258,7 +261,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPO-bE-hWG" userLabel="Ping Units">
-                                                <rect key="frame" x="0.0" y="66" width="42" height="17"/>
+                                                <rect key="frame" x="0.0" y="66" width="60" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -273,10 +276,10 @@
                                             <constraint firstItem="2fO-hM-t7M" firstAttribute="leading" secondItem="EYh-mT-Oo3" secondAttribute="trailing" constant="2" id="Md0-an-d6e"/>
                                             <constraint firstItem="EYh-mT-Oo3" firstAttribute="centerY" secondItem="2fO-hM-t7M" secondAttribute="centerY" id="W94-bF-BXd"/>
                                             <constraint firstItem="V5h-aw-Bet" firstAttribute="leading" secondItem="h9H-SR-QTz" secondAttribute="leading" id="XYh-zV-0zy"/>
-                                            <constraint firstAttribute="trailing" secondItem="2fO-hM-t7M" secondAttribute="trailing" id="Yqv-ny-gl4"/>
+                                            <constraint firstAttribute="trailing" secondItem="2fO-hM-t7M" secondAttribute="trailing" constant="5" id="Yqv-ny-gl4"/>
                                             <constraint firstItem="V5h-aw-Bet" firstAttribute="top" secondItem="2fO-hM-t7M" secondAttribute="bottom" constant="8" symbolic="YES" id="iii-zh-avb"/>
                                             <constraint firstItem="XPO-bE-hWG" firstAttribute="centerX" secondItem="h9H-SR-QTz" secondAttribute="centerX" id="uOX-qe-EnA"/>
-                                            <constraint firstAttribute="width" constant="42" id="vgs-S4-5sL"/>
+                                            <constraint firstAttribute="width" constant="60" id="vgs-S4-5sL"/>
                                             <constraint firstAttribute="height" constant="83" id="z8q-Ni-5OG"/>
                                         </constraints>
                                     </view>
@@ -296,7 +299,7 @@
                                                     <constraint firstAttribute="height" constant="10" id="WfN-TB-zs5"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-Gs-Ehw" userLabel="Jitter Speed">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-Gs-Ehw" userLabel="Jitter Value">
                                                 <rect key="frame" x="0.0" y="28" width="50" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="eXx-U1-51P"/>
@@ -344,7 +347,7 @@
                                                     <constraint firstAttribute="height" constant="10" id="A73-YL-UVa"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-GK-Nha" userLabel="Loss %">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-GK-Nha" userLabel="Loss Value">
                                                 <rect key="frame" x="0.0" y="28" width="50" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="0qf-Ev-6Gh"/>
@@ -761,6 +764,14 @@
                     <connections>
                         <outlet property="dotsImage" destination="oqp-Ul-K1h" id="8mk-UO-jED"/>
                         <outlet property="downloadSpeedLabel" destination="59Q-TL-hBE" id="Tb3-ug-0Ik"/>
+                        <outlet property="liveJitterLabel" destination="8ha-7y-93w" id="2me-QU-yZ4"/>
+                        <outlet property="liveLossLabel" destination="VUr-r2-qMu" id="p0S-gw-xsy"/>
+                        <outlet property="livePingLabel" destination="qGj-LE-vFm" id="Kgc-TE-bEw"/>
+                        <outlet property="metricsLiveView" destination="aBh-vv-Rda" id="akI-vb-dko"/>
+                        <outlet property="metricsResultsView" destination="aIu-nn-XZV" id="KpV-GS-2Bp"/>
+                        <outlet property="resultJitterLabel" destination="T2O-Gs-Ehw" id="iFN-FE-hhD"/>
+                        <outlet property="resultLossLabel" destination="Ad5-GK-Nha" id="eCk-t5-4tT"/>
+                        <outlet property="resultPingLabel" destination="V5h-aw-Bet" id="7DB-cQ-VNs"/>
                         <outlet property="serverButton" destination="v04-B3-AyX" id="f2c-Qp-ffK"/>
                         <outlet property="serverImageHorizontalConstraint" destination="bWo-4L-vfK" id="x8n-MJ-ffw"/>
                         <outlet property="serverImageVerticalConstraint" destination="fI5-lg-BDP" id="fd3-nA-zqv"/>
@@ -770,13 +781,11 @@
                         <outlet property="serverTitleVerticalConstraint" destination="MBy-NK-0J5" id="Bn9-5d-ig5"/>
                         <outlet property="speedResultVerticalConstraint" destination="IyI-6o-VxN" id="nZH-sO-XVc"/>
                         <outlet property="speedTestFinishedButtons" destination="8Qu-z6-fcP" id="zKj-bW-jpr"/>
-                        <outlet property="speedTestValuesView" destination="aBh-vv-Rda" id="akI-vb-dko"/>
                         <outlet property="speedTestView" destination="Cb6-3X-iW5" id="8cq-nG-r8N"/>
                         <outlet property="startButton" destination="59e-JJ-QD6" id="mPW-sC-j7W"/>
                         <outlet property="startButtonGlowView" destination="Sqd-pR-SxC" id="dl8-R3-Gmn"/>
                         <outlet property="startButtonSKView" destination="25S-Fh-He3" id="NvH-wM-pDx"/>
                         <outlet property="transferImage" destination="xd8-b1-AWH" id="CnZ-70-OxR"/>
-                        <outlet property="transferResultsView" destination="aIu-nn-XZV" id="KpV-GS-2Bp"/>
                         <outlet property="transferSpeedLabel" destination="WMq-Bc-V0W" id="bHg-hb-vth"/>
                         <outlet property="transferSpeedUnitsLabel" destination="Lxi-rJ-Weo" id="8gR-8V-9BC"/>
                         <outlet property="transferSpeedView" destination="txx-We-ra0" id="b9s-HZ-ijX"/>

@@ -15,19 +15,21 @@
 		4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */; };
 		4C8084432540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084422540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift */; };
 		4C8084472541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084462541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift */; };
-		4C80844B25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80844A25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift */; };
-		4C80845025411F1E009C5AE4 /* SpeedTestValuesHideAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80844F25411F1E009C5AE4 /* SpeedTestValuesHideAnimation.swift */; };
+		4C80844B25411D91009C5AE4 /* MetricsLiveShowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80844A25411D91009C5AE4 /* MetricsLiveShowAnimation.swift */; };
+		4C80845025411F1E009C5AE4 /* MetricsLiveHideAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80844F25411F1E009C5AE4 /* MetricsLiveHideAnimation.swift */; };
 		4C80845425411FE8009C5AE4 /* TransferSpeedDownAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845325411FE8009C5AE4 /* TransferSpeedDownAnimation.swift */; };
 		4C80845825412275009C5AE4 /* TransferSpeedUpAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845725412275009C5AE4 /* TransferSpeedUpAnimation.swift */; };
 		4C80845B2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80845A2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift */; };
-		4C80846225412C36009C5AE4 /* TransferResultsShowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */; };
-		4C80846625412C41009C5AE4 /* TransferResultsHideAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */; };
+		4C80846225412C36009C5AE4 /* MetricsResultsShowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846125412C36009C5AE4 /* MetricsResultsShowAnimation.swift */; };
+		4C80846625412C41009C5AE4 /* MetricsResultsHideAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846525412C41009C5AE4 /* MetricsResultsHideAnimation.swift */; };
 		4C80846B2541AC04009C5AE4 /* DownloadTransferSpeedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846A2541AC04009C5AE4 /* DownloadTransferSpeedAnimation.swift */; };
 		4C80846E2541AC7F009C5AE4 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80846D2541AC7F009C5AE4 /* NetworkConnection.swift */; };
 		4C8084732541D41F009C5AE4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084722541D41F009C5AE4 /* Animation.swift */; };
 		4C8084782541D43F009C5AE4 /* AnimationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084772541D43F009C5AE4 /* AnimationContainer.swift */; };
 		4C80847D2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80847C2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift */; };
 		4C8084812541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084802541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift */; };
+		4C80849225423B54009C5AE4 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849125423B54009C5AE4 /* Metrics.swift */; };
+		4C80849525423C22009C5AE4 /* MetricsLiveValuesAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */; };
 		4CD8C831253E2E29008FB158 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82A253E2E28008FB158 /* 1.png */; };
 		4CD8C832253E2E29008FB158 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82B253E2E28008FB158 /* 3.png */; };
 		4CD8C833253E2E29008FB158 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82C253E2E28008FB158 /* 2.png */; };
@@ -65,19 +67,21 @@
 		4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestViewController.swift; sourceTree = "<group>"; };
 		4C8084422540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLeftAndTextDownAnimation.swift; sourceTree = "<group>"; };
 		4C8084462541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerImageRightAndTextUpAnimation.swift; sourceTree = "<group>"; };
-		4C80844A25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestValuesShowAnimation.swift; sourceTree = "<group>"; };
-		4C80844F25411F1E009C5AE4 /* SpeedTestValuesHideAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTestValuesHideAnimation.swift; sourceTree = "<group>"; };
+		4C80844A25411D91009C5AE4 /* MetricsLiveShowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveShowAnimation.swift; sourceTree = "<group>"; };
+		4C80844F25411F1E009C5AE4 /* MetricsLiveHideAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveHideAnimation.swift; sourceTree = "<group>"; };
 		4C80845325411FE8009C5AE4 /* TransferSpeedDownAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedDownAnimation.swift; sourceTree = "<group>"; };
 		4C80845725412275009C5AE4 /* TransferSpeedUpAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedUpAnimation.swift; sourceTree = "<group>"; };
 		4C80845A2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferSpeedBackToStartAnimation.swift; sourceTree = "<group>"; };
-		4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResultsShowAnimation.swift; sourceTree = "<group>"; };
-		4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResultsHideAnimation.swift; sourceTree = "<group>"; };
+		4C80846125412C36009C5AE4 /* MetricsResultsShowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsResultsShowAnimation.swift; sourceTree = "<group>"; };
+		4C80846525412C41009C5AE4 /* MetricsResultsHideAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsResultsHideAnimation.swift; sourceTree = "<group>"; };
 		4C80846A2541AC04009C5AE4 /* DownloadTransferSpeedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTransferSpeedAnimation.swift; sourceTree = "<group>"; };
 		4C80846D2541AC7F009C5AE4 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		4C8084722541D41F009C5AE4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		4C8084772541D43F009C5AE4 /* AnimationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationContainer.swift; sourceTree = "<group>"; };
 		4C80847C2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTransferSpeedAnimation.swift; sourceTree = "<group>"; };
 		4C8084802541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetTransferSpeedsAnimation.swift; sourceTree = "<group>"; };
+		4C80849125423B54009C5AE4 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveValuesAnimation.swift; sourceTree = "<group>"; };
 		4CD8C82A253E2E28008FB158 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		4CD8C82B253E2E28008FB158 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		4CD8C82C253E2E28008FB158 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -144,17 +148,19 @@
 				4C39F49E253B517E00708FD7 /* SpeedTestViewController.swift */,
 				4CE72B77253CCEED00E6631E /* UIView+Extension.swift */,
 				4C80846D2541AC7F009C5AE4 /* NetworkConnection.swift */,
+				4C80849125423B54009C5AE4 /* Metrics.swift */,
 			);
 			path = "Speedtest Animation";
 			sourceTree = "<group>";
 		};
-		4C80844925411D76009C5AE4 /* SpeedTestValues */ = {
+		4C80844925411D76009C5AE4 /* MetricsLive */ = {
 			isa = PBXGroup;
 			children = (
-				4C80844A25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift */,
-				4C80844F25411F1E009C5AE4 /* SpeedTestValuesHideAnimation.swift */,
+				4C80844A25411D91009C5AE4 /* MetricsLiveShowAnimation.swift */,
+				4C80844F25411F1E009C5AE4 /* MetricsLiveHideAnimation.swift */,
+				4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */,
 			);
-			path = SpeedTestValues;
+			path = MetricsLive;
 			sourceTree = "<group>";
 		};
 		4C80845225411FDA009C5AE4 /* TransferSpeed */ = {
@@ -170,13 +176,13 @@
 			path = TransferSpeed;
 			sourceTree = "<group>";
 		};
-		4C80845F25412BF6009C5AE4 /* TransferResults */ = {
+		4C80845F25412BF6009C5AE4 /* MetricsResults */ = {
 			isa = PBXGroup;
 			children = (
-				4C80846125412C36009C5AE4 /* TransferResultsShowAnimation.swift */,
-				4C80846525412C41009C5AE4 /* TransferResultsHideAnimation.swift */,
+				4C80846125412C36009C5AE4 /* MetricsResultsShowAnimation.swift */,
+				4C80846525412C41009C5AE4 /* MetricsResultsHideAnimation.swift */,
 			);
-			path = TransferResults;
+			path = MetricsResults;
 			sourceTree = "<group>";
 		};
 		4CD8C84A25408A85008FB158 /* Animations */ = {
@@ -187,10 +193,10 @@
 				4CE72B66253C952100E6631E /* DownloadAnimation.swift */,
 				4CD8C84F25409C82008FB158 /* Server */,
 				4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */,
-				4C80844925411D76009C5AE4 /* SpeedTestValues */,
+				4C80844925411D76009C5AE4 /* MetricsLive */,
+				4C80845F25412BF6009C5AE4 /* MetricsResults */,
 				4CD8C8612540A30C008FB158 /* StartButton */,
 				4CD8C84C254093E9008FB158 /* TimerAnimation.swift */,
-				4C80845F25412BF6009C5AE4 /* TransferResults */,
 				4C80845225411FDA009C5AE4 /* TransferSpeed */,
 				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
 				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
@@ -334,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C80849525423C22009C5AE4 /* MetricsLiveValuesAnimation.swift in Sources */,
 				4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */,
 				4C8084432540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift in Sources */,
 				4C80846E2541AC7F009C5AE4 /* NetworkConnection.swift in Sources */,
@@ -341,7 +348,7 @@
 				4CD8C86C2540A5A0008FB158 /* StartButtonAnimation.swift in Sources */,
 				4C8084732541D41F009C5AE4 /* Animation.swift in Sources */,
 				4CD8C87A2540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift in Sources */,
-				4C80844B25411D91009C5AE4 /* SpeedTestValuesShowAnimation.swift in Sources */,
+				4C80844B25411D91009C5AE4 /* MetricsLiveShowAnimation.swift in Sources */,
 				4CD8C85225409C96008FB158 /* ServerImageDownAnimation.swift in Sources */,
 				4CD8C85E25409F25008FB158 /* WifiArgs.swift in Sources */,
 				4C80845B2541250E009C5AE4 /* TransferSpeedBackToStartAnimation.swift in Sources */,
@@ -353,19 +360,20 @@
 				4CD8C8902540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift in Sources */,
 				4CD8C847254079D8008FB158 /* WifiImageDownAnimation.swift in Sources */,
 				4CD8C8402540766A008FB158 /* ServerArgs.swift in Sources */,
-				4C80846225412C36009C5AE4 /* TransferResultsShowAnimation.swift in Sources */,
+				4C80846225412C36009C5AE4 /* MetricsResultsShowAnimation.swift in Sources */,
 				4CD8C8702540A99F008FB158 /* SpeedTestCompleteShowButtonsAnimation.swift in Sources */,
 				4C39F489253B292400708FD7 /* AppDelegate.swift in Sources */,
 				4C8084782541D43F009C5AE4 /* AnimationContainer.swift in Sources */,
 				4C39F48B253B292400708FD7 /* SceneDelegate.swift in Sources */,
-				4C80845025411F1E009C5AE4 /* SpeedTestValuesHideAnimation.swift in Sources */,
+				4C80845025411F1E009C5AE4 /* MetricsLiveHideAnimation.swift in Sources */,
 				4C80845825412275009C5AE4 /* TransferSpeedUpAnimation.swift in Sources */,
 				4C80847D2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift in Sources */,
 				4C8084812541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift in Sources */,
 				4CD8C88C2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift in Sources */,
 				4C8084472541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift in Sources */,
-				4C80846625412C41009C5AE4 /* TransferResultsHideAnimation.swift in Sources */,
+				4C80846625412C41009C5AE4 /* MetricsResultsHideAnimation.swift in Sources */,
 				4CD8C84D254093E9008FB158 /* TimerAnimation.swift in Sources */,
+				4C80849225423B54009C5AE4 /* Metrics.swift in Sources */,
 				4C80845425411FE8009C5AE4 /* TransferSpeedDownAnimation.swift in Sources */,
 				4CD8C8882540CD91008FB158 /* WifiImageRightAndTextUpAnimation.swift in Sources */,
 			);

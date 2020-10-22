@@ -1,5 +1,5 @@
 //
-//  TransferResultsShowAnimation.swift
+//  MetricsResultsHideAnimation.swift
 //  Speedtest Animation
 //
 //  Created by Michael Charland on 2020-10-21.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class TransferResultsShowAnimation: TimerAnimation {
+class MetricsResultsHideAnimation: TimerAnimation {
+
     public var timer: Timer!
 
     private var view: UIView
@@ -17,16 +18,19 @@ class TransferResultsShowAnimation: TimerAnimation {
     }
 
     public func before() {
-        view.alpha = 0
+        view.alpha = 1.0
         view.isHidden = false
     }
 
     public func animate() {
-        view.alpha += 0.05
+        view.alpha -= 0.05
     }
 
     public func isFinished() -> Bool {
-        return view.alpha >= 1.0
+        return view.alpha <= 0.0
+    }
+
+    public func onCompletion() {
+        view.isHidden = true
     }
 }
-

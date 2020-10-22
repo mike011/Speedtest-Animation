@@ -20,7 +20,7 @@ class DownloadTransferSpeedAnimation: TimerAnimation {
         self.finalLabel = finalLabel
     }
     func animate() {
-        currentLabel.text = String(format: "%.2f", networkConnection.getCurrentTransferRate());
+        currentLabel.text = String(format: "%.2f", networkConnection.getDownloadTransferRate());
     }
 
     func isFinished() -> Bool {
