@@ -89,6 +89,7 @@ class SpeedTestViewController: UIViewController {
         let wifiArgs = WifiArgs(title: wifiTitle, imageVerticalConstraint: wifiImageVerticalConstraint)
         animations.append(WifiImageDownAnimation(args: wifiArgs))
 
+        animations.append(SpeedTestValuesShowAnimation(view: speedTestValuesView))
         return animations
     }
 
@@ -111,9 +112,8 @@ class SpeedTestViewController: UIViewController {
                             titleVerticalConstraint: wifiTitleVerticalConstraint,
                             titleHorizontalConstraint: wifiTitleHorizontalConstraint))
 
-//        animations.append(WifiTextDownAnimation(title: wifiTitle, verticalConstraint: wifiTitleVerticalConstraint))
-
         animations.append(SpeedTestCompleteShowButtonsAnimation(view: speedTestFinishedButtons))
+        animations.append(SpeedTestValuesHideAnimation(view: speedTestValuesView))
         return animations
     }
 

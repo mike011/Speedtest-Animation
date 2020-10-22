@@ -18,7 +18,6 @@ class ServerImageDownAnimation: TimerAnimation {
     private var imageHorizontalConstraint: NSLayoutConstraint
     private var dots: UIImageView
 
-
     init(args: ServerArgs) {
         self.title = args.title
         self.subtitle = args.subtitle
