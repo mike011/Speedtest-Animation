@@ -7,12 +7,12 @@
 
 import UIKit
 
-public class DownloadAnimation {
+class DownloadAnimation {
 
     private let view: UIView
     private let downloadColor: UIColor
 
-    public init(forView view: UIView) {
+    init(forView view: UIView) {
         self.view = view
         self.downloadColor = UIColor(named: "DownloadParticleColor")!
     }

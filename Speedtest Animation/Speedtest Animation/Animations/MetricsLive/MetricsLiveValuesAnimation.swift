@@ -10,9 +10,9 @@ import Foundation
 class MetricsLiveAnimation: TimerAnimation {
 
     var timer: Timer!
-    var connection: Connection
-    let liveMetrics: Metrics
-    let resultMetrics: Metrics
+    private let connection: Connection
+    private let liveMetrics: Metrics
+    private let resultMetrics: Metrics
 
     init(connection: Connection, liveMetrics: Metrics, resultMetrics: Metrics) {
         self.connection = connection

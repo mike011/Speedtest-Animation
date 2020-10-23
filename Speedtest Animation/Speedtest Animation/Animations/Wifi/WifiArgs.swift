@@ -8,9 +8,9 @@
 import UIKit
 
 public struct WifiArgs {
-    var title: UILabel
-    var imageVerticalConstraint: NSLayoutConstraint
-    var imageVerticalDefault: CGFloat
+    let title: UILabel
+    let imageVerticalConstraint: NSLayoutConstraint
+    let imageVerticalDefault: CGFloat
 
     init(title: UILabel,
          imageVerticalConstraint: NSLayoutConstraint) {

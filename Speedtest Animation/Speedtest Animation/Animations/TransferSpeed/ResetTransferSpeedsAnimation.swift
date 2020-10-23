@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 class ResetTransferSpeedsAnimation: TimerAnimation {
-    public var timer: Timer!
+    var timer: Timer!
 
-    private var upload: UILabel
-    private var download: UILabel
+    private let upload: UILabel
+    private let download: UILabel
 
     init(upload: UILabel, download: UILabel) {
         self.upload = upload

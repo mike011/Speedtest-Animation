@@ -9,9 +9,9 @@ import UIKit
 
 class MetricsResultsHideAnimation: TimerAnimation {
 
-    public var timer: Timer!
+    var timer: Timer!
 
-    private var view: UIView
+    private let view: UIView
 
     init(view: UIView) {
         self.view = view

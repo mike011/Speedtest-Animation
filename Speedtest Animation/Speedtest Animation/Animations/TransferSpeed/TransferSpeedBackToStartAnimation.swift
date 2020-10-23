@@ -11,9 +11,9 @@ class TransferSpeedBackToStartAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    private var transferSpeedView: UIView
-    private var verticalConstraint: NSLayoutConstraint
-    private var defaultValue: CGFloat
+    private let transferSpeedView: UIView
+    private let verticalConstraint: NSLayoutConstraint
+    private let defaultValue: CGFloat
 
     init(transferSpeedView: UIView,
          verticalConstraint: NSLayoutConstraint) {

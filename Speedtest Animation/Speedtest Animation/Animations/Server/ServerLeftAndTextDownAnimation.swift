@@ -13,13 +13,13 @@ class ServerImageLeftAndTextDownAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    var title: UILabel
-    var subtitle: UILabel
-    var imageVerticalConstraint: NSLayoutConstraint
-    var imageHorizontalConstraint: NSLayoutConstraint
-    var titleVerticalConstraint: NSLayoutConstraint
-    var titleHorizontalConstraint: NSLayoutConstraint
-    var dots: UIImageView
+    private let title: UILabel
+    private let subtitle: UILabel
+    private let imageVerticalConstraint: NSLayoutConstraint
+    private let imageHorizontalConstraint: NSLayoutConstraint
+    private let titleVerticalConstraint: NSLayoutConstraint
+    private let titleHorizontalConstraint: NSLayoutConstraint
+    private let dots: UIImageView
 
     init(title: UILabel,
          subtitle: UILabel,

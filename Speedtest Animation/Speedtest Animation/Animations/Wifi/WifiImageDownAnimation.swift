@@ -11,9 +11,9 @@ class WifiImageDownAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    var title: UILabel
-    var imageVerticalConstraint: NSLayoutConstraint
-    var imageVerticalDefault: CGFloat
+    private let title: UILabel
+    private let imageVerticalConstraint: NSLayoutConstraint
+    private let imageVerticalDefault: CGFloat
 
     init(args: WifiArgs) {
         self.title = args.title

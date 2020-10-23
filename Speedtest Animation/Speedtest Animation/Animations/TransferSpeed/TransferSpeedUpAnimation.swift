@@ -11,8 +11,8 @@ class TransferSpeedUpAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    private var verticalConstraint: NSLayoutConstraint
-    private var transferSpeedView: UIView
+    private let verticalConstraint: NSLayoutConstraint
+    private let transferSpeedView: UIView
 
     init(transferSpeedView: UIView,
          verticalConstraint: NSLayoutConstraint) {

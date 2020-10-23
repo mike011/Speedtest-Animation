@@ -11,12 +11,12 @@ class ServerImageDownAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    private var title: UILabel
-    private var subtitle: UILabel
-    private var button: UIButton
-    private var imageVerticalConstraint: NSLayoutConstraint
-    private var imageHorizontalConstraint: NSLayoutConstraint
-    private var dots: UIImageView
+    private let title: UILabel
+    private let subtitle: UILabel
+    private let button: UIButton
+    private let imageVerticalConstraint: NSLayoutConstraint
+    private let imageHorizontalConstraint: NSLayoutConstraint
+    private let dots: UIImageView
 
     init(args: ServerArgs) {
         self.title = args.title

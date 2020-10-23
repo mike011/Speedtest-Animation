@@ -11,8 +11,8 @@ class TransferSpeedDownAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    private var verticalConstraint: NSLayoutConstraint
-    private var defaultValue: CGFloat
+    private let verticalConstraint: NSLayoutConstraint
+    private let defaultValue: CGFloat
 
     init(verticalConstraint: NSLayoutConstraint) {
         self.verticalConstraint = verticalConstraint

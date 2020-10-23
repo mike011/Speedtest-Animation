@@ -7,25 +7,25 @@
 
 import UIKit
 
-public class SpeedTestCompleteHideButtonsAnimation: TimerAnimation {
-    public var timer: Timer!
+class SpeedTestCompleteHideButtonsAnimation: TimerAnimation {
+    var timer: Timer!
 
-    private var view: UIView
+    private let view: UIView
 
     init(view: UIView) {
         self.view = view
     }
 
-    public func before() {
+    func before() {
         view.isHidden = false
         view.alpha -= 1.0
     }
 
-    public func animate() {
+    func animate() {
         view.alpha -= 0.20
     }
 
-    public func isFinished() -> Bool {
+    func isFinished() -> Bool {
         return view.alpha <= 0.0
     }
 }

@@ -8,15 +8,15 @@
 import UIKit
 
 public struct ServerArgs {
-    var title: UILabel
-    var subtitle: UILabel
-    var button: UIButton
-    var imageVerticalConstraint: NSLayoutConstraint
-    var imageVerticalDefault: CGFloat
+    let title: UILabel
+    let subtitle: UILabel
+    let button: UIButton
+    let imageVerticalConstraint: NSLayoutConstraint
+    let imageVerticalDefault: CGFloat
 
-    var imageHorizontalConstraint: NSLayoutConstraint
-    var imageHorizontalDefault: CGFloat
-    var dots: UIImageView
+    let imageHorizontalConstraint: NSLayoutConstraint
+    let imageHorizontalDefault: CGFloat
+    let dots: UIImageView
 
     init(title: UILabel,
          subtitle: UILabel,

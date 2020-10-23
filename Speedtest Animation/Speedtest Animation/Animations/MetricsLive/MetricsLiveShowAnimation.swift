@@ -11,7 +11,7 @@ class MetricsLiveShowAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    private var view: UIView
+    private let view: UIView
 
     init(view: UIView) {
         self.view = view

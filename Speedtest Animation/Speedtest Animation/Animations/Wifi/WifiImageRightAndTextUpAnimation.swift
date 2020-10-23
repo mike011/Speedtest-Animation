@@ -11,13 +11,13 @@ class WifiImageRightAndTextUpAnimation: TimerAnimation {
 
     var timer: Timer!
 
-    var subtitle: UILabel
-    var imageVerticalConstraint: NSLayoutConstraint
-    var imageVerticalStartValue: CGFloat
-    var imageHorizontalConstraint: NSLayoutConstraint
-    var imageHorizontalStartValue: CGFloat
-    var textVerticalConstraint: NSLayoutConstraint
-    var textHorizontalConstraint: NSLayoutConstraint
+    private let subtitle: UILabel
+    private let imageVerticalConstraint: NSLayoutConstraint
+    private let imageVerticalStartValue: CGFloat
+    private let imageHorizontalConstraint: NSLayoutConstraint
+    private let imageHorizontalStartValue: CGFloat
+    private let textVerticalConstraint: NSLayoutConstraint
+    private let textHorizontalConstraint: NSLayoutConstraint
 
     init(subtitle: UILabel,
         imageVerticalConstraint: NSLayoutConstraint,

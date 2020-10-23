@@ -7,10 +7,10 @@
 
 import SpriteKit
 
-public class StartButtonAnimation: Animation {
+class StartButtonAnimation: Animation {
 
-    private var scene: SKScene!
-    private var button: UIButton
+    private let scene: SKScene!
+    private let button: UIButton
 
     init(view: SKView, button: UIButton) {
         self.scene = Self.createScene(fromView: view)
@@ -24,7 +24,7 @@ public class StartButtonAnimation: Animation {
         return scene
     }
 
-    public func start() {
+    func start() {
         button.isHidden = true
         let action = SKAction.animate(with: getTextures(), timePerFrame: 0.04)
         let animation = SKSpriteNode(imageNamed: "1.png")
@@ -40,7 +40,7 @@ public class StartButtonAnimation: Animation {
         return result
     }
 
-    public func finish() {
+    func finish() {
         scene.removeAllChildren()
     }
 }

@@ -8,28 +8,28 @@
 import SpriteKit
 import UIKit
 
-public class StartButtonHideBackgroundAnimation: TimerAnimation {
-    public var timer: Timer!
+class StartButtonHideBackgroundAnimation: TimerAnimation {
+    var timer: Timer!
 
-    private var sKView: SKView
-    private var glowView: UIImageView
+    private let sKView: SKView
+    private let glowView: UIImageView
 
     init(sKView: SKView, glowView: UIImageView) {
         self.sKView = sKView
         self.glowView = glowView
     }
 
-    public func before() {
+    func before() {
         sKView.alpha = 1.0
         glowView.alpha = 1.0
     }
 
-    public func animate() {
+    func animate() {
         sKView.alpha -= 0.1
         glowView.alpha -= 0.1
     }
 
-    public func isFinished() -> Bool {
+    func isFinished() -> Bool {
         glowView.alpha <= 0.0
     }
 }
