@@ -15,7 +15,9 @@ class ServerImageDownAnimation: TimerAnimation {
     private let subtitle: UILabel
     private let button: UIButton
     private let imageVerticalConstraint: NSLayoutConstraint
+    private let imageVerticalStartValue: CGFloat
     private let imageHorizontalConstraint: NSLayoutConstraint
+    private let imageHorizontalStartValue: CGFloat
     private let dots: UIImageView
 
     init(args: ServerArgs) {
@@ -23,23 +25,28 @@ class ServerImageDownAnimation: TimerAnimation {
         self.subtitle = args.subtitle
         self.button = args.button
         self.imageVerticalConstraint = args.imageVerticalConstraint
+        self.imageVerticalStartValue = imageVerticalConstraint.constant
         self.imageHorizontalConstraint = args.imageHorizontalConstraint
+        self.imageHorizontalStartValue = imageHorizontalConstraint.constant
         self.dots = args.dots
     }
 
     func before() {
+        imageVerticalConstraint.constant = imageVerticalStartValue
+        imageHorizontalConstraint.constant = imageHorizontalStartValue
         dots.isHidden = false
         dots.alpha = 0.0
         title.alpha = 1.0
     }
 
     func animate() {
-        title.alpha -= 0.05
-        subtitle.alpha -= 0.05
-        button.alpha -= 0.05
-        dots.alpha += 0.10
-        imageVerticalConstraint.constant -= 8.0
-        imageHorizontalConstraint.constant += 4.8
+        let alpha: CGFloat = 0.08
+        title.alpha -= alpha
+        subtitle.alpha -= alpha
+        button.alpha -= alpha
+        dots.alpha += alpha
+        imageVerticalConstraint.constant -= 12.2
+        imageHorizontalConstraint.constant += 7.8
     }
 
     func isFinished() -> Bool {

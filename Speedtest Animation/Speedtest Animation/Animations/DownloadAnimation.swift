@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloadAnimation {
+class DownloadAnimation: Animation {
 
     private let view: UIView
     private let downloadColor: UIColor
@@ -17,15 +17,14 @@ class DownloadAnimation {
         self.downloadColor = UIColor(named: "DownloadParticleColor")!
     }
 
-    func display() {
+    func start() {
         displayTopLeftAnimation()
         displayTopRightAnimation()
         displayBottomLeftAnimation()
         displayBottomRightAnimation()
     }
 
-    func remove() {
-        view.layer.sublayers?.removeAll()
+    func finish() {
     }
 
     fileprivate func displayTopLeftAnimation() {

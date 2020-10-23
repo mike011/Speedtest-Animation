@@ -12,7 +12,7 @@ class SpeedTestViewController: UIViewController {
 
     // MARK: - Speed Test
     @IBOutlet weak var speedTestView: UIView!
-    private var speedTestDurationInSeconds = 1
+    private var speedTestDurationInSeconds = 3
     @IBOutlet weak var transferImage: UIImageView!
 
     // MARK: - Transfer Speed
@@ -179,8 +179,9 @@ class SpeedTestViewController: UIViewController {
                             finalLabel: downloadSpeedLabel))
 
         let live = Metrics(ping: livePingLabel, jitter: liveJitterLabel, loss: liveLossLabel)
-        let result = Metrics(ping: resultPingLabel, jitter: resultJitterLabel, loss: resultLossLabel)
-        animations.append(MetricsLiveAnimation(connection: connection, liveMetrics: live, resultMetrics: result))
+        animations.append(MetricsLiveDownloadAnimation(connection: connection, liveMetrics: live))
+        animations.append(ShowDownloadAnimation(image: transferImage))
+        animations.append(DownloadAnimation(forView: speedTestView))
 
         return AnimationContainer(animations: animations)
     }
@@ -191,6 +192,11 @@ class SpeedTestViewController: UIViewController {
                             networkConnection: connection,
                             currentLabel: transferSpeedLabel,
                             finalLabel: uploadSpeedLabel))
+        let live = Metrics(ping: livePingLabel, jitter: liveJitterLabel, loss: liveLossLabel)
+        let result = Metrics(ping: resultPingLabel, jitter: resultJitterLabel, loss: resultLossLabel)
+        animations.append(MetricsLiveUploadAnimation(connection: connection, liveMetrics: live, resultMetrics: result))
+        animations.append(ShowUploadAnimation(image: transferImage))
+        animations.append(UploadAnimation(forView: speedTestView))
         return AnimationContainer(animations: animations)
     }
 
@@ -203,35 +209,26 @@ class SpeedTestViewController: UIViewController {
 
     private func showDownloadAnimation() {
         downloadTestStartedAnimations.start()
-        self.transferImage.isHidden = false
-        self.transferImage.image = UIImage(named: "download")!
-        let downloadAnimation = DownloadAnimation(forView: self.speedTestView)
-        downloadAnimation.display()
-        downloadAnimationCompleted(downloadAnimation)
+        downloadAnimationCompleted()
     }
 
-    private func downloadAnimationCompleted(_ downloadAnimation: DownloadAnimation) {
+    private func downloadAnimationCompleted() {
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
-            self.transferImage.image = UIImage(named: "upload")!
-            downloadAnimation.remove()
-            let uploadAnimation = UploadAnimation(forView: self.speedTestView)
-            uploadAnimation.display()
-            self.uploadAnimationCompleted(uploadAnimation)
+            self.uploadTestAnimationCompleted()
             self.downloadTestStartedAnimations.finish()
         }
     }
 
-    private func uploadAnimationCompleted(_ uploadAnimation: UploadAnimation) {
+    private func uploadTestAnimationCompleted() {
         uploadTestStartedAnimations.start()
         DispatchQueue.main.asyncAfter(deadline: getDuration()) {
-            uploadAnimation.remove()
             self.speedTestFinishedAnimations.start()
             self.transferImage.isHidden = true
             self.uploadTestStartedAnimations.finish()
         }
     }
 
-    private func getDuration() -> DispatchTime {
+    func getDuration() -> DispatchTime {
         return .now() + .milliseconds(speedTestDurationInSeconds * 1000)
     }
 

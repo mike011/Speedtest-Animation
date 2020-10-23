@@ -46,12 +46,13 @@ class ServerImageLeftAndTextDownAnimation: TimerAnimation {
     }
 
     func animate() {
-        title.alpha += 0.1
-        subtitle.alpha += 0.1
-        dots.alpha -= 0.1
-        imageVerticalConstraint.constant += 3.22
-        imageHorizontalConstraint.constant -= 4
-        titleVerticalConstraint.constant -= 0.8
+        let alpha: CGFloat = 0.1
+        title.alpha += alpha
+        subtitle.alpha += alpha
+        dots.alpha -= alpha
+        imageVerticalConstraint.constant += 5.2
+        imageHorizontalConstraint.constant -= 6.6
+        titleVerticalConstraint.constant -= 1.2
     }
 
     func isFinished() -> Bool {

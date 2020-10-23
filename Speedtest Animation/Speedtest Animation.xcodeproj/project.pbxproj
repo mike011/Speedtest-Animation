@@ -29,7 +29,11 @@
 		4C80847D2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80847C2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift */; };
 		4C8084812541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084802541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift */; };
 		4C80849225423B54009C5AE4 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849125423B54009C5AE4 /* Metrics.swift */; };
-		4C80849525423C22009C5AE4 /* MetricsLiveValuesAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */; };
+		4C80849525423C22009C5AE4 /* MetricsLiveUploadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849425423C22009C5AE4 /* MetricsLiveUploadAnimation.swift */; };
+		4C80849D25427769009C5AE4 /* MetricsLiveDownloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849C25427769009C5AE4 /* MetricsLiveDownloadAnimation.swift */; };
+		4C8084A0254278D5009C5AE4 /* DispatchQueueAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C80849F254278D5009C5AE4 /* DispatchQueueAnimation.swift */; };
+		4C8084A6254279A4009C5AE4 /* ShowDownloadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084A5254279A4009C5AE4 /* ShowDownloadAnimation.swift */; };
+		4C8084AA254279AE009C5AE4 /* ShowUploadAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8084A9254279AE009C5AE4 /* ShowUploadAnimation.swift */; };
 		4CD8C831253E2E29008FB158 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82A253E2E28008FB158 /* 1.png */; };
 		4CD8C832253E2E29008FB158 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82B253E2E28008FB158 /* 3.png */; };
 		4CD8C833253E2E29008FB158 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD8C82C253E2E28008FB158 /* 2.png */; };
@@ -81,7 +85,11 @@
 		4C80847C2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadTransferSpeedAnimation.swift; sourceTree = "<group>"; };
 		4C8084802541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetTransferSpeedsAnimation.swift; sourceTree = "<group>"; };
 		4C80849125423B54009C5AE4 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
-		4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveValuesAnimation.swift; sourceTree = "<group>"; };
+		4C80849425423C22009C5AE4 /* MetricsLiveUploadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveUploadAnimation.swift; sourceTree = "<group>"; };
+		4C80849C25427769009C5AE4 /* MetricsLiveDownloadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsLiveDownloadAnimation.swift; sourceTree = "<group>"; };
+		4C80849F254278D5009C5AE4 /* DispatchQueueAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueAnimation.swift; sourceTree = "<group>"; };
+		4C8084A5254279A4009C5AE4 /* ShowDownloadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDownloadAnimation.swift; sourceTree = "<group>"; };
+		4C8084A9254279AE009C5AE4 /* ShowUploadAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUploadAnimation.swift; sourceTree = "<group>"; };
 		4CD8C82A253E2E28008FB158 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		4CD8C82B253E2E28008FB158 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		4CD8C82C253E2E28008FB158 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
@@ -158,7 +166,8 @@
 			children = (
 				4C80844A25411D91009C5AE4 /* MetricsLiveShowAnimation.swift */,
 				4C80844F25411F1E009C5AE4 /* MetricsLiveHideAnimation.swift */,
-				4C80849425423C22009C5AE4 /* MetricsLiveValuesAnimation.swift */,
+				4C80849425423C22009C5AE4 /* MetricsLiveUploadAnimation.swift */,
+				4C80849C25427769009C5AE4 /* MetricsLiveDownloadAnimation.swift */,
 			);
 			path = MetricsLive;
 			sourceTree = "<group>";
@@ -185,22 +194,33 @@
 			path = MetricsResults;
 			sourceTree = "<group>";
 		};
+		4C8084A32542797A009C5AE4 /* TransferImage */ = {
+			isa = PBXGroup;
+			children = (
+				4C8084A5254279A4009C5AE4 /* ShowDownloadAnimation.swift */,
+				4C8084A9254279AE009C5AE4 /* ShowUploadAnimation.swift */,
+			);
+			path = TransferImage;
+			sourceTree = "<group>";
+		};
 		4CD8C84A25408A85008FB158 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
 				4C8084722541D41F009C5AE4 /* Animation.swift */,
 				4C8084772541D43F009C5AE4 /* AnimationContainer.swift */,
+				4CD8C84C254093E9008FB158 /* TimerAnimation.swift */,
+				4C80849F254278D5009C5AE4 /* DispatchQueueAnimation.swift */,
 				4CE72B66253C952100E6631E /* DownloadAnimation.swift */,
+				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
 				4CD8C84F25409C82008FB158 /* Server */,
 				4CD8C8722540A9A3008FB158 /* SpeedTestCompleteButtons */,
 				4C80844925411D76009C5AE4 /* MetricsLive */,
 				4C80845F25412BF6009C5AE4 /* MetricsResults */,
 				4CD8C8612540A30C008FB158 /* StartButton */,
-				4CD8C84C254093E9008FB158 /* TimerAnimation.swift */,
+				4C8084A32542797A009C5AE4 /* TransferImage */,
 				4C80845225411FDA009C5AE4 /* TransferSpeed */,
-				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
-				4CE72B6C253C979800E6631E /* UploadAnimation.swift */,
 				4CD8C85625409D22008FB158 /* Wifi */,
+				4CE72B69253C95EF00E6631E /* UIImage+Extension.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -340,14 +360,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C80849525423C22009C5AE4 /* MetricsLiveValuesAnimation.swift in Sources */,
+				4C80849525423C22009C5AE4 /* MetricsLiveUploadAnimation.swift in Sources */,
 				4C39F49F253B517E00708FD7 /* SpeedTestViewController.swift in Sources */,
+				4C8084AA254279AE009C5AE4 /* ShowUploadAnimation.swift in Sources */,
 				4C8084432540FA32009C5AE4 /* ServerLeftAndTextDownAnimation.swift in Sources */,
 				4C80846E2541AC7F009C5AE4 /* NetworkConnection.swift in Sources */,
 				4CE72B6D253C979800E6631E /* UploadAnimation.swift in Sources */,
 				4CD8C86C2540A5A0008FB158 /* StartButtonAnimation.swift in Sources */,
 				4C8084732541D41F009C5AE4 /* Animation.swift in Sources */,
 				4CD8C87A2540ACE8008FB158 /* WifiImageLeftAndTextDownAnimation.swift in Sources */,
+				4C8084A0254278D5009C5AE4 /* DispatchQueueAnimation.swift in Sources */,
 				4C80844B25411D91009C5AE4 /* MetricsLiveShowAnimation.swift in Sources */,
 				4CD8C85225409C96008FB158 /* ServerImageDownAnimation.swift in Sources */,
 				4CD8C85E25409F25008FB158 /* WifiArgs.swift in Sources */,
@@ -356,6 +378,7 @@
 				4CE72B67253C952100E6631E /* DownloadAnimation.swift in Sources */,
 				4CE72B78253CCEED00E6631E /* UIView+Extension.swift in Sources */,
 				4C80846B2541AC04009C5AE4 /* DownloadTransferSpeedAnimation.swift in Sources */,
+				4C8084A6254279A4009C5AE4 /* ShowDownloadAnimation.swift in Sources */,
 				4CE72B6A253C95EF00E6631E /* UIImage+Extension.swift in Sources */,
 				4CD8C8902540D20B008FB158 /* StartButtonShowBackgroundAnimation.swift in Sources */,
 				4CD8C847254079D8008FB158 /* WifiImageDownAnimation.swift in Sources */,
@@ -369,6 +392,7 @@
 				4C80845825412275009C5AE4 /* TransferSpeedUpAnimation.swift in Sources */,
 				4C80847D2541FBF1009C5AE4 /* UploadTransferSpeedAnimation.swift in Sources */,
 				4C8084812541FCD1009C5AE4 /* ResetTransferSpeedsAnimation.swift in Sources */,
+				4C80849D25427769009C5AE4 /* MetricsLiveDownloadAnimation.swift in Sources */,
 				4CD8C88C2540D0E8008FB158 /* SpeedTestCompleteHideButtonsAnimation.swift in Sources */,
 				4C8084472541007F009C5AE4 /* ServerImageRightAndTextUpAnimation.swift in Sources */,
 				4C80846625412C41009C5AE4 /* MetricsResultsHideAnimation.swift in Sources */,

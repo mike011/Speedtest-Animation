@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DownloadTransferSpeedAnimation: TimerAnimation {
+class DownloadTransferSpeedAnimation: DispatchQueueAnimation {
     var timer: Timer!
 
     private let networkConnection:Connection
@@ -21,10 +21,6 @@ class DownloadTransferSpeedAnimation: TimerAnimation {
     }
     func animate() {
         currentLabel.text = String(format: "%.2f", networkConnection.getDownloadTransferRate());
-    }
-
-    func isFinished() -> Bool {
-        return false
     }
 
     func onCompletion() {

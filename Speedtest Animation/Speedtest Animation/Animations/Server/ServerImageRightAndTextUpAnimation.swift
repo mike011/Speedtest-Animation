@@ -41,19 +41,21 @@ class ServerImageRightAndTextUpAnimation: TimerAnimation {
     }
 
     func animate() {
-        subtitle.alpha += 0.02
-        imageHorizontalConstraint.constant += 2.1
-        textHorizontalConstraint.constant += 2.1
+        subtitle.alpha += 0.06
+        let horizontal: CGFloat = 4
+        imageHorizontalConstraint.constant += horizontal
+        textHorizontalConstraint.constant += horizontal
     }
 
     func isFinished() -> Bool {
-        return subtitle.alpha >= 1
+        return imageHorizontalConstraint.constant >= imageHorizontalStartValue
     }
 
     func onCompletion() {
         imageVerticalConstraint.constant = imageVerticalStartValue
         imageHorizontalConstraint.constant = imageHorizontalStartValue
         button.alpha = 1.0
+        subtitle.alpha = 1.0
     }
 }
 

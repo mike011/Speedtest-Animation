@@ -7,21 +7,22 @@
 
 import UIKit
 
-public class UploadAnimation {
+class UploadAnimation: Animation {
 
     private let view: UIView
     private let downloadColor: UIColor
 
-    public init(forView view: UIView) {
+    init(forView view: UIView) {
         self.view = view
         self.downloadColor = UIColor(named: "UploadParticleColor")!
     }
 
-    func display() {
+    func start() {
+        view.layer.sublayers?.removeAll()
         displayUploadAnimation()
     }
 
-    func remove() {
+    func finish() {
         view.layer.sublayers?.removeAll()
     }
 
