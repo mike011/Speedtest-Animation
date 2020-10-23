@@ -1,5 +1,7 @@
 ![](data:image/jpeg;base64,IyBTcGVlZHRlc3QtQW5pbWF0aW9uCldyaXRlIHRoZSBTd2lmdCBjb2RlIHRvIGxvb2sgbGlrZTogaHR0cHM6Ly93d3cudXBsYWJzLmNvbS9wb3N0cy9zcGVlZHRlc3QtYW5pbWF0aW9uCg==)
 
+# ONLY WORKS ON AN iPHONE 11
+
 # Journal
 
 ## Oct 15th
@@ -72,3 +74,5 @@ So I spent a ton of time today breaking up the animations in there own classes. 
 # Oct 22
 
 I like how the animations look, but I'm not a fan of they are some what out of sync. I'm going to spend some time today massaging those animation numbers to make them align better, but before that I want to animate the transfer speed, ping, jitter, and loss.
+
+So the animations look a little better now. I also added some more animations to make things look smooth. They are still a bit out of sync and need to be massaged a little more. I want to add more animations when the speed test is occurring to make the transitions feel smoother. Also noticed a glow around the download and upload transfer images, might add that too.
