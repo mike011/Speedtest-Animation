@@ -22,6 +22,10 @@
 - Fix the lack of a naming convention used in the assets catalog
 - add tails to the animations to make them look nicer
 - constrain again percent of screen size instead of alpha or number. This would allow the view to grow for all screens.
+- Creating non linear animations
+- Creating testable animations
+- Potentially use [animateWithDuration](https://developer.apple.com/documentation/uikit/uiview/1622451-animatewithduration?language=occ), and [UIViewPropertyAnimator](https://developer.apple.com/documentation/uikit/uiviewpropertyanimator)
+
 # Concerns
 
 - How would the test and summary graph handle a really bad speed test?

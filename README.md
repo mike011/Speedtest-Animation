@@ -76,3 +76,9 @@ So I spent a ton of time today breaking up the animations in there own classes. 
 I like how the animations look, but I'm not a fan of they are some what out of sync. I'm going to spend some time today massaging those animation numbers to make them align better, but before that I want to animate the transfer speed, ping, jitter, and loss.
 
 So the animations look a little better now. I also added some more animations to make things look smooth. They are still a bit out of sync and need to be massaged a little more. I want to add more animations when the speed test is occurring to make the transitions feel smoother. Also noticed a glow around the download and upload transfer images, might add that too.
+
+# Oct 27
+
+So this was a really fun project and I feel I learned a lot about breaking down the animations into various steps and writing the code to reflect that. I found it really interesting that the more you watched the animation the more subtle smaller animations you would see. Also I found using the scrubber bar to find out how some more of the smaller animations worked.
+
+Wow things you notice afterwards. There is download button on the uplabs sight and it downloads a sketch file. Ughh Sketch is paid app, Installed, I got no clue what's going on here. I'm not a designer :P Something to look into on a future date. As far as I can tell, it's just the full screen images in Sketch and not the individual assets or animations.
