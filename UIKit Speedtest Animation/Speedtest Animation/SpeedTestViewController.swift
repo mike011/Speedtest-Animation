@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import SwiftUI
 import UIKit
 
 class SpeedTestViewController: UIViewController {
@@ -238,3 +239,14 @@ class SpeedTestViewController: UIViewController {
     }
 }
 
+#Preview {
+    createViewController()
+}
+
+@MainActor
+func createViewController() -> SpeedTestViewController {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(identifier: "SpeedTestViewController") as! SpeedTestViewController
+    vc.loadViewIfNeeded()
+    return vc
+}
