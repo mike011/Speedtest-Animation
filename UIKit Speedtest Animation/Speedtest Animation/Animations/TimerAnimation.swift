@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol TimerAnimation: Animation {
+public protocol TimerAnimation: Animation, Sendable {
     var timer: Timer! {get set}
     func animate()
     func isFinished() -> Bool
@@ -18,13 +18,15 @@ public protocol TimerAnimation: Animation {
 extension TimerAnimation {
     public func start() {
         before()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { [weak self] timer in
-            guard let self = self else {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.04, repeats: true) { [weak self] _ in
+            guard let self else {
                 return
             }
-            self.animate()
-            if self.isFinished() {
-                self.finish()
+            MainActor.assumeIsolated {
+                self.animate()
+                if self.isFinished() {
+                    self.finish()
+                }
             }
         }
     }

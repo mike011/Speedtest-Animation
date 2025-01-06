@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 public struct ServerArgs {
     let title: UILabel
     let subtitle: UILabel

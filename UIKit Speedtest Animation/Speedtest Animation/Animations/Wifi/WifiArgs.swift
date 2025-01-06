@@ -7,6 +7,7 @@
 
 import UIKit
 
+@MainActor
 public struct WifiArgs {
     let title: UILabel
     let imageVerticalConstraint: NSLayoutConstraint
